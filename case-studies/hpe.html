@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Hub (HPE) — Saurabh Kumar</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+  <div id="progress"></div>
+
+  <nav class="nav is-scrolled" id="main-nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">SK</a>
+      <div class="nav__links">
+        <a href="../index.html#work" class="nav__link">Work</a>
+        <a href="../index.html#about" class="nav__link">About</a>
+        <a href="mailto:tosaurav15@gmail.com" class="nav__link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="cs-hero">
+    <div class="cs-hero__grain"></div>
+    <div class="cs-hero__accent-line"></div>
+    <div class="cs-hero__inner">
+      <a href="../index.html" class="cs-hero__back">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 5l-7 7 7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        All Work
+      </a>
+      <p class="cs-hero__eyebrow">HPE / NCG Client · Enterprise UX · Multi-role Platform · 03/05</p>
+      <h1 class="cs-hero__title">
+        <span class="cs-hero__title-inner">THE HUB</span>
+        <span class="cs-hero__title-sub">Participation Infrastructure for HPE's ERGs.</span>
+      </h1>
+      <div class="cs-hero__meta">
+        <div>
+          <p class="cs-hero__meta-label">Role</p>
+          <p class="cs-hero__meta-value">Lead UX Designer — end-to-end</p>
+        </div>
+        <div>
+          <p class="cs-hero__meta-label">Context</p>
+          <p class="cs-hero__meta-value">Internal ERG platform · NCG client engagement</p>
+        </div>
+        <div>
+          <p class="cs-hero__meta-label">Platform</p>
+          <p class="cs-hero__meta-value">Web + PWA · Single design system</p>
+        </div>
+        <div>
+          <p class="cs-hero__meta-label">Scale</p>
+          <p class="cs-hero__meta-value">1,200+ users · 6 roles</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-body">
+
+    <section class="cs-section" id="context">
+      <div class="cs-section__eyebrow"><span class="cs-section__num">01</span><span class="cs-section__label">Context</span></div>
+      <h2 class="cs-section__title">COMMUNITIES REAL. TOOLS IMPROVISED.</h2>
+      <div class="cs-section__body">
+        <p>HPE's Employee Resource Groups were functioning — but through friction, not infrastructure. Membership over email. Events over calendar invites. Impact measured manually. The communities were real. The tools were improvised.</p>
+        <p>HPE commissioned NCG to build The Hub: a purpose-built ERG platform consolidating management, communication, participation, and analytics into one coherent system. I led UX across all modules, all six roles, and both the web and PWA surfaces.</p>
+        <div class="callout reveal">
+          <p class="callout__label">The Brief</p>
+          <p class="callout__text">"Design a comprehensive ERG platform to streamline management, foster employee engagement, and support HPE's commitment to DEI."</p>
+        </div>
+        <p>The brief described a list of capabilities. It didn't describe the design problem underneath them — which was considerably harder.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" id="problem">
+      <div class="cs-section__eyebrow"><span class="cs-section__num">02</span><span class="cs-section__label">The Real Problem</span></div>
+      <h2 class="cs-section__title">NOT SIX PRODUCTS. ONE PLATFORM.</h2>
+      <div class="cs-section__body">
+        <p>The default approach to a platform with six modules and six user roles is to design them sequentially. Each role gets its own design pass. The platform ships as the sum of its parts.</p>
+        <p>That approach produces something that technically does everything and feels like nothing. The Hub isn't six products for six users. It's one platform where six different people are simultaneously present, interacting with the same underlying objects — clubs, events, posts, members, feedback — from radically different positions.</p>
+        <div class="principle reveal">
+          <p class="principle__text">DESIGN THEM AS SEPARATE ROLE FLOWS AND YOU SHIP SIX INTERACTION LANGUAGES FOR THE SAME SYSTEM.</p>
+        </div>
+        <p>There was a second problem underneath. An enterprise community platform — social layer hosted by an employer, used by employees. Building something that feels genuinely voluntary and genuinely social inside an enterprise context required specific design decisions I had to argue for and hold through the project.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" id="roles">
+      <div class="cs-section__eyebrow"><span class="cs-section__num">03</span><span class="cs-section__label">Six Roles, One System</span></div>
+      <h2 class="cs-section__title">COGNITIVE MODE, NOT TASK LIST.</h2>
+      <div class="cs-section__body">
+        <p>Before any screen work began, the most important design act was mapping the cognitive mode of each role — not just their tasks, but what they were actually trying to know at any given moment.</p>
+
+        <div class="arch reveal">
+          <p class="arch__title">Six-role cognitive mode map</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div style="border-left:2px solid rgba(52,120,200,0.4);padding-left:0.75rem;">
+              <p style="font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(184,147,90,0.7);margin-bottom:0.25rem;">User</p>
+              <p style="font-size:0.75rem;color:rgba(242,237,229,0.45);line-height:1.5;font-style:italic;">"What's relevant to me, and how involved do I have to be?"</p>
+            </div>
+            <div style="border-left:2px solid rgba(52,120,200,0.4);padding-left:0.75rem;">
+              <p style="font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(184,147,90,0.7);margin-bottom:0.25rem;">Club Owner</p>
+              <p style="font-size:0.75rem;color:rgba(242,237,229,0.45);line-height:1.5;font-style:italic;">"Is my club healthy, and what do I do to keep it growing?"</p>
+            </div>
+            <div style="border-left:2px solid rgba(52,120,200,0.4);padding-left:0.75rem;">
+              <p style="font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(184,147,90,0.7);margin-bottom:0.25rem;">Event Manager</p>
+              <p style="font-size:0.75rem;color:rgba(242,237,229,0.45);line-height:1.5;font-style:italic;">"Is this event coming together, and who knows about it?"</p>
+            </div>
+            <div style="border-left:2px solid rgba(52,120,200,0.4);padding-left:0.75rem;">
+              <p style="font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(184,147,90,0.7);margin-bottom:0.25rem;">Moderator</p>
+              <p style="font-size:0.75rem;color:rgba(242,237,229,0.45);line-height:1.5;font-style:italic;">"Is the community behaving well, and what needs my attention right now?"</p>
+            </div>
+            <div style="border-left:2px solid rgba(52,120,200,0.4);padding-left:0.75rem;">
+              <p style="font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(184,147,90,0.7);margin-bottom:0.25rem;">Admin</p>
+              <p style="font-size:0.75rem;color:rgba(242,237,229,0.45);line-height:1.5;font-style:italic;">"What do I need to know, and what do I need to act on — across the portfolio?"</p>
+            </div>
+            <div style="border-left:2px solid rgba(52,120,200,0.4);padding-left:0.75rem;">
+              <p style="font-size:0.6875rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(184,147,90,0.7);margin-bottom:0.25rem;">Poll Creator</p>
+              <p style="font-size:0.75rem;color:rgba(242,237,229,0.45);line-height:1.5;font-style:italic;">"What does the community think, and can I find out quickly?"</p>
+            </div>
+          </div>
+        </div>
+
+        <p>The architecture decision: <strong>one product, role-responsive surfaces.</strong> The underlying IA is shared. What's foregrounded, what actions are available, how information is organised — that adapts to how you enter the system.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" id="decisions">
+      <div class="cs-section__eyebrow"><span class="cs-section__num">04</span><span class="cs-section__label">Key Design Decisions</span></div>
+      <h2 class="cs-section__title">SIX DECISIONS THAT SHAPED THE SYSTEM.</h2>
+      <div class="cs-section__body">
+
+        <div class="decision reveal">
+          <p class="decision__kicker">Decision 01</p>
+          <h3 class="decision__title">A Genuine Social Layer — Not a Tool With Social Features</h3>
+          <div class="decision__stance"><p>People don't join ERGs for event registration. They join because they want to belong. If the platform can't replicate the texture of a real community, nobody comes back.</p></div>
+          <div class="decision__body">
+            <p>The social layer includes a personalised home feed with three views, post creation with image and video support, a live content indicator, and a Buddies system that runs through onboarding and persists on every screen.</p>
+            <p><strong>The constraint held throughout:</strong> nothing should feel like performance for the employer. Every mechanic had to serve the user's desire to connect — not the organisation's desire to report participation. Participation driven by social pressure is not participation — it's attendance.</p>
+          </div>
+        </div>
+
+        <!-- Real screen: The Hub Home Feed -->
+        <div class="annotated-screen reveal">
+          <div class="phone-wrap">
+            <p class="phone-label">Screen — The Hub Home Feed</p>
+            <div class="phone-frame">
+              <img src="../assets/images/hpe-home-feed.png" alt="The Hub home feed showing My Feed tab with posts from Megan Perry and Hannah Smith, live content indicator, engagement metrics, and bottom nav with Home, Clubs, Events, Buddies, Leaderboard" />
+            </div>
+            <p class="phone-caption">Three feed views (My Feed, Explore GCC, You Might Also Like) with live post indicator, engagement counts, and bottom nav that persists across the full experience.</p>
+          </div>
+          <div class="annotation-list">
+            <div class="annotation-item">
+              <span class="annotation-num">1</span>
+              <div class="annotation-text">
+                <strong>Three feed views</strong>
+                My Feed, Explore GCC, You Might Also Like — different levels of familiarity, different discovery modes, without fragmenting the experience.
+              </div>
+            </div>
+            <div class="annotation-item">
+              <span class="annotation-num">2</span>
+              <div class="annotation-text">
+                <strong>Live badge on posts</strong>
+                The live content indicator surfaces real-time activity — creates the sense of a community that's actually alive right now.
+              </div>
+            </div>
+            <div class="annotation-item">
+              <span class="annotation-num">3</span>
+              <div class="annotation-text">
+                <strong>Persistent bottom nav</strong>
+                Home, Clubs, Events, Buddies, Leaderboard — all core surfaces always reachable. No buried navigation.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="decision reveal">
+          <p class="decision__kicker">Decision 02</p>
+          <h3 class="decision__title">One IA, Six Entry Points</h3>
+          <div class="decision__body">
+            <p>Separate interfaces per role are cleaner to design. One product is harder but coherent to use. The reason to choose the harder path: people in this platform don't have fixed identities. A Club Owner is also a member of other clubs where they're a regular User. Separate interfaces fragment the experience of people who are genuinely multi-role.</p>
+            <p>The nav and available surfaces adapt to the user's primary role on login. Same objects, different framing and permissions.</p>
+          </div>
+        </div>
+
+        <!-- Real screen: Clubs Discovery -->
+        <div class="annotated-screen reveal">
+          <div class="phone-wrap">
+            <p class="phone-label">Screen — Clubs Discovery</p>
+            <div class="phone-frame">
+              <img src="../assets/images/hpe-clubs.png" alt="The Hub clubs discovery screen with Discover and My Clubs tabs, clubs your friends are in section, suggestions based on interests, and trending clubs" />
+            </div>
+            <p class="phone-caption">Club discovery personalised to the user's network and interests — Clubs your friends are in, Suggestions, Trending — without requiring manual search.</p>
+          </div>
+          <div class="annotation-list">
+            <div class="annotation-item">
+              <span class="annotation-num">1</span>
+              <div class="annotation-text">
+                <strong>Social proof at surface level</strong>
+                "Clubs your friends are in" reduces the friction of joining — if people you already know are there, the community feels real before you enter it.
+              </div>
+            </div>
+            <div class="annotation-item">
+              <span class="annotation-num">2</span>
+              <div class="annotation-text">
+                <strong>Global vs Regional distinction</strong>
+                Club cards show scope upfront — 700 People in a Global club reads differently from a Regional club. Sets expectations before commitment.
+              </div>
+            </div>
+            <div class="annotation-item">
+              <span class="annotation-num">3</span>
+              <div class="annotation-text">
+                <strong>"Bring a Buddy" on every card</strong>
+                The mechanic is surfaced at discovery — not buried inside the club. The social invitation is part of how you explore, not an afterthought.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="decision reveal">
+          <p class="decision__kicker">Decision 03</p>
+          <h3 class="decision__title">Gamification That Rewards Depth, Not Frequency</h3>
+          <div class="decision__stance"><p>Gamification in an ERG platform can create momentum — or it can create anxiety. Less-active members shouldn't feel ranked as less committed.</p></div>
+          <div class="decision__body">
+            <p>The milestone system, mountain journey metaphor, and quarterly leaderboard all reward meaningful participation milestones, not raw activity counts. <strong>The constraint:</strong> no gamification element should make a less-active member feel less valued.</p>
+          </div>
+        </div>
+
+        <!-- Real screen: Bring a Buddy -->
+        <div class="annotated-screen reveal">
+          <div class="phone-wrap">
+            <p class="phone-label">Screen — Bring a Buddy Mechanic</p>
+            <div class="phone-frame">
+              <img src="../assets/images/hpe-bring-buddy.png" alt="The Hub Bring a Buddy screen showing personalised invitation message, search field, and buddy list with Bring buddy and Buddy Invited states" />
+            </div>
+            <p class="phone-caption">The Buddy mechanic is personal — your invitation includes a message you can edit, and your existing buddies are surfaced inline with clear invite states.</p>
+          </div>
+          <div class="annotation-list">
+            <div class="annotation-item">
+              <span class="annotation-num">1</span>
+              <div class="annotation-text">
+                <strong>Personalised invitation message</strong>
+                Editable copy that reads like a real person — "I'd love for you to join me at Rock Music Enthusiasts Club!" Not a system notification. A human invite.
+              </div>
+            </div>
+            <div class="annotation-item">
+              <span class="annotation-num">2</span>
+              <div class="annotation-text">
+                <strong>Buddy states: Bring buddy / Buddy Invited</strong>
+                Clear distinction between who you've invited and who you haven't — no re-inviting, no confusion. Respects the user's memory.
+              </div>
+            </div>
+            <div class="annotation-item">
+              <span class="annotation-num">3</span>
+              <div class="annotation-text">
+                <strong>Search + existing list together</strong>
+                Find new people without losing sight of existing buddies. One flow, both modes.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="decision reveal">
+          <p class="decision__kicker">Decision 04</p>
+          <h3 class="decision__title">Moderation as Triage, Not Surveillance</h3>
+          <div class="decision__body">
+            <p>Three sub-modules: Content Review (post-level), Feedback Review (event-level), Image Review. The three-action model for Content Review — Delete, Warn, Approve — was deliberate. Warn User sits between doing nothing and deleting, letting the system communicate a standard without punishing immediately.</p>
+            <p><strong>The constraint:</strong> the moderation interface processes items that need a decision. It doesn't browse member profiles or review history. Triage, not surveillance.</p>
+          </div>
+        </div>
+
+        <div class="decision reveal">
+          <p class="decision__kicker">Decision 05</p>
+          <h3 class="decision__title">Event Creation — Progressive Disclosure Without Hiding Fields</h3>
+          <div class="decision__body">
+            <p>~15 fields, four involving role assignments or toggles that affect what else is required. The approach: a single scrollable view with toggle pairs (Global/Regional, In-person/Virtual) as visible scope controls. Field dependencies become legible. Active fields respond to choices. The user always sees the full form.</p>
+          </div>
+        </div>
+
+        <div class="decision reveal">
+          <p class="decision__kicker">Decision 06</p>
+          <h3 class="decision__title">One Design System. Two Viewports.</h3>
+          <div class="decision__body">
+            <p>The Hub is a PWA — one codebase, browser rendering. The three-column desktop layout collapses to single column + bottom nav on mobile. Every component had to earn its place at both sizes. Nothing got to be a desktop-only pattern. <strong>That constraint made the design system better than it would have been without it.</strong></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cs-section" id="outcomes">
+      <div class="cs-section__eyebrow"><span class="cs-section__num">05</span><span class="cs-section__label">Outcomes</span></div>
+      <h2 class="cs-section__title">WHAT SHIPPED.</h2>
+      <div class="cs-section__body">
+        <div class="outcomes-grid reveal">
+          <div class="outcome-box">
+            <p class="outcome-box__value">1,200+</p>
+            <p class="outcome-box__label">Users across six distinct roles — on web and PWA surfaces.</p>
+          </div>
+          <div class="outcome-box">
+            <p class="outcome-box__value">6</p>
+            <p class="outcome-box__label">Distinct roles served by one coherent platform — not six separate products.</p>
+          </div>
+          <div class="outcome-box">
+            <p class="outcome-box__value">2×</p>
+            <p class="outcome-box__label">Viewports (desktop + PWA) served by a single design system with no separate mobile components.</p>
+          </div>
+          <div class="outcome-box">
+            <p class="outcome-box__value">→</p>
+            <p class="outcome-box__label">Post-launch adoption tracking underway. ERG leader onboarding in progress — data to be surfaced as the platform matures.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" id="learnings">
+      <div class="cs-section__eyebrow"><span class="cs-section__num">06</span><span class="cs-section__label">Learnings</span></div>
+      <h2 class="cs-section__title">BELONGING FIRST.</h2>
+      <div class="cs-section__body">
+        <p>Designing an enterprise community platform is a different problem than designing either an enterprise tool or a community platform. Enterprise tools fail by being too rigid. Community platforms fail by being too permissive.</p>
+        <p>Almost always, I argued for <strong>belonging first</strong> — because you can add governance later, but you can't recover a community that never formed.</p>
+        <div class="principle reveal">
+          <p class="principle__text">THE TEST OF AN ENTERPRISE SOCIAL PRODUCT IS WHETHER PEOPLE RETURN BECAUSE THEY WANT TO — NOT BECAUSE THEY HAVE TO.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <a href="pwc.html" class="cs-next">
+    <div class="cs-next__inner">
+      <div>
+        <p class="cs-next__label">Next Project</p>
+        <p class="cs-next__title">PWC DASHBOARD</p>
+      </div>
+      <div class="cs-next__icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </a>
+
+  <footer class="footer">
+    <div class="footer__hello">
+      <div class="footer__hello-rotator">
+        <div class="footer__hello-slide"><span class="footer__hello-slide-label">Say</span><span class="footer__hello-text">HELLO!</span></div>
+        <div class="footer__hello-slide"><span class="footer__hello-slide-label">Find the</span><span class="footer__hello-text">MISSING STATE.</span></div>
+        <div class="footer__hello-slide"><span class="footer__hello-slide-label">Not</span><span class="footer__hello-text">SCREENS.</span></div>
+      </div>
+    </div>
+    <a href="mailto:tosaurav15@gmail.com" class="footer__email">TOSAURAV15@GMAIL.COM</a>
+    <div class="footer__nav">
+      <div class="footer__nav-group">
+        <p class="footer__nav-group__label">Navigation</p>
+        <div class="footer__nav-group__links">
+          <a href="../index.html" class="footer__nav-link">Home</a>
+          <a href="../index.html#work" class="footer__nav-link">Work</a>
+          <a href="../index.html#about" class="footer__nav-link">About</a>
+        </div>
+      </div>
+      <div class="footer__nav-group">
+        <p class="footer__nav-group__label">Case Studies</p>
+        <div class="footer__nav-group__links">
+          <a href="welocity.html" class="footer__nav-link">Welocity</a>
+          <a href="rcms.html" class="footer__nav-link">RCMS — HPE</a>
+          <a href="hpe.html" class="footer__nav-link">The Hub — HPE</a>
+          <a href="pwc.html" class="footer__nav-link">PwC Dashboard</a>
+          <a href="indigo.html" class="footer__nav-link">IndiGo</a>
+        </div>
+      </div>
+      <div class="footer__nav-group">
+        <p class="footer__nav-group__label">Connect</p>
+        <div class="footer__nav-group__links">
+          <a href="https://linkedin.com/in/saurabhkumar-1" target="_blank" class="footer__nav-link">LinkedIn →</a>
+          <a href="mailto:tosaurav15@gmail.com" class="footer__nav-link">tosaurav15@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy">© 2026 Saurabh Kumar</span>
+      <span class="footer__made">Senior Product Designer · Open to Remote</span>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

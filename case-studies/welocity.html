@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welocity — Saurabh Kumar</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+  <div id="progress"></div>
+
+  <nav class="nav is-scrolled" id="main-nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">SK</a>
+      <div class="nav__links">
+        <a href="../index.html#work" class="nav__link">Work</a>
+        <a href="../index.html#about" class="nav__link">About</a>
+        <a href="mailto:tosaurav15@gmail.com" class="nav__link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="cs-hero">
+    <div class="cs-hero__grain"></div>
+    <div class="cs-hero__accent-line"></div>
+    <div class="cs-hero__inner">
+      <a href="../index.html" class="cs-hero__back">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 5l-7 7 7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        All Work
+      </a>
+      <p class="cs-hero__eyebrow">NCG Product · Career Intelligence · AI Design · 01/05</p>
+      <h1 class="cs-hero__title">
+        <span class="cs-hero__title-inner">WELOCITY</span>
+        <span class="cs-hero__title-sub">Career Intelligence, Not Just Hiring.</span>
+      </h1>
+      <div class="cs-hero__meta">
+        <div>
+          <p class="cs-hero__meta-label">Role</p>
+          <p class="cs-hero__meta-value">Lead UX Designer — end-to-end</p>
+        </div>
+        <div>
+          <p class="cs-hero__meta-label">Context</p>
+          <p class="cs-hero__meta-value">NCG's own hiring intelligence product</p>
+        </div>
+        <div>
+          <p class="cs-hero__meta-label">Duration</p>
+          <p class="cs-hero__meta-value">Ongoing from Dec 2022</p>
+        </div>
+        <div>
+          <p class="cs-hero__meta-label">Impact</p>
+          <p class="cs-hero__meta-value">−20% eval time · +40% completion</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BODY ── -->
+  <div class="cs-body">
+
+    <!-- Context -->
+    <section class="cs-section" id="context">
+      <div class="cs-section__eyebrow">
+        <span class="cs-section__num">01</span>
+        <span class="cs-section__label">Context</span>
+      </div>
+      <h2 class="cs-section__title">THIRTY YEARS OF THE WRONG PROBLEM.</h2>
+      <div class="cs-section__body">
+        <p>Hiring platforms have been solving the wrong problem for thirty years. They optimised the pipeline — faster, more organised, better filtered. What they didn't fix: the quality of the decision, and the dignity of the person it's made about.</p>
+        <p>Welocity is NCG's own hiring intelligence product. I led UX from the ground up — not from a brief, but from two questions asked in parallel: what would hiring look like if it was built around decision quality? What would career look like if it treated you as an agent with a trajectory?</p>
+        <div class="callout reveal">
+          <p class="callout__label">The Brief</p>
+          <p class="callout__text">"Design a hiring platform that uses AI to improve recruiter efficiency and candidate experience."</p>
+        </div>
+        <p>That was the starting point. It was the wrong frame — and changing that frame became the first design decision.</p>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="cs-section" id="problem">
+      <div class="cs-section__eyebrow">
+        <span class="cs-section__num">02</span>
+        <span class="cs-section__label">What Was Actually Wrong</span>
+      </div>
+      <h2 class="cs-section__title">THE PIPELINE METAPHOR IS BROKEN.</h2>
+      <div class="cs-section__body">
+        <p>Every existing hiring tool is built on two shared assumptions. First: hiring is a pipeline management problem. Second: the candidate's relationship with the platform ends when the decision is made.</p>
+        <p>Watch a recruiter work for an hour and the first assumption breaks immediately. They're slow not because the UI is inefficient. They're slow because every evaluation forces them to mentally reconstruct candidate quality from scratch. The profile is a data dump, not a decision surface. Every decision — even the tenth that day — starts from zero.</p>
+        <p>For candidates, the failure runs deeper. Job searching isn't a process problem — it's an identity and direction problem. No existing platform addresses that.</p>
+        <div class="principle reveal">
+          <p class="principle__text">THE MOST CONSEQUENTIAL DESIGN GAP IN HIRING ISN'T IN THE PIPELINE — IT'S IN WHAT HAPPENS WHEN THE PIPELINE IS DONE WITH YOU.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reframe -->
+    <section class="cs-section" id="reframe">
+      <div class="cs-section__eyebrow">
+        <span class="cs-section__num">03</span>
+        <span class="cs-section__label">The Reframe</span>
+      </div>
+      <h2 class="cs-section__title">SIGNAL INTELLIGENCE, NOT PIPELINE MANAGEMENT.</h2>
+      <div class="cs-section__body">
+        <p>Hiring is not a pipeline problem. It is a signal intelligence problem — for both sides.</p>
+        <p>For recruiters: the bottleneck is interpretation. Extracting meaning from capability, surfacing that understanding at the moment a decision needs to be made.</p>
+        <p>For candidates: the bottleneck is continuity. Understanding who you are, where you're going, what the gap is — regardless of whether you're in an active job search or not.</p>
+        <p>This reframe changed everything. Instead of designing a better ATS, we were designing an intelligence layer that serves both sides simultaneously — and never stops serving the candidate, even when a specific opportunity closes.</p>
+      </div>
+    </section>
+
+    <!-- Architecture -->
+    <section class="cs-section" id="architecture">
+      <div class="cs-section__eyebrow">
+        <span class="cs-section__num">04</span>
+        <span class="cs-section__label">Architecture</span>
+      </div>
+      <h2 class="cs-section__title">ONE SIGNAL FABRIC. TWO VALUE SURFACES.</h2>
+      <div class="cs-section__body">
+        <p>The most important structural decision in Welocity is the one you don't see in any single screen. Welocity is a <strong>dual system</strong> — hiring intelligence for recruiters, career intelligence for candidates — both running on the same signal fabric.</p>
+        <p>When candidate signals and recruiter evaluation signals are built on the same model, matching becomes meaningful rather than mechanical. And the candidate's signal landscape is always theirs — not just for this application, but for the arc.</p>
+
+        <div class="arch reveal">
+          <p class="arch__title">Dual-system signal architecture</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
+            <div>
+              <p style="font-size:0.6875rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(184,147,90,0.7);margin-bottom:0.5rem;">Hiring Intelligence</p>
+              <p style="font-size:0.8125rem;color:rgba(242,237,229,0.45);line-height:1.6;">Recruiters · Profiles as decision surfaces · Octo as AI interpreter · Never ranks, always explains</p>
+            </div>
+            <div>
+              <p style="font-size:0.6875rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(184,147,90,0.7);margin-bottom:0.5rem;">Career Intelligence</p>
+              <p style="font-size:0.8125rem;color:rgba(242,237,229,0.45);line-height:1.6;">Candidates · North Star · Career Compass · Career Galaxy · Active across full career arc</p>
+            </div>
+          </div>
+          <div class="arch__flow">
+            <span class="arch__node arch__node--accent">Signal Fabric</span>
+            <span class="arch__arr">→</span>
+            <span class="arch__node">Ingestion</span>
+            <span class="arch__arr">→</span>
+            <span class="arch__node">Extraction</span>
+            <span class="arch__arr">→</span>
+            <span class="arch__node">Validation</span>
+            <span class="arch__arr">→</span>
+            <span class="arch__node">Matching</span>
+            <span class="arch__arr">→</span>
+            <span class="arch__node">AI Interpretation</span>
+            <span class="arch__arr">→</span>
+            <span class="arch__node">UX Output</span>
+            <span class="arch__arr">→</span>
+            <span class="arch__node">Feedback Loop</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recruiter decisions -->
+    <section class="cs-section" id="recruiter">
+      <div class="cs-section__eyebrow">
+        <span class="cs-section__num">05</span>
+        <span class="cs-section__label">Recruiter Side — Key Decisions</span>
+      </div>
+      <h2 class="cs-section__title">PROFILES AS DECISION SURFACES.</h2>
+      <div class="cs-section__body">
+
+        <div class="decision reveal">
+          <p class="decision__kicker">Decision 01</p>
+          <h3 class="decision__title">The Candidate Profile as a Decision Surface</h3>
+          <div class="decision__stance"><p>The default mental model for a candidate profile is a container. We broke that model.</p></div>
+          <div class="decision__body">
+            <p>The profile in Welocity is structured not to hold information but to support a specific cognitive task: evaluation at depth, quickly, with confidence. Signals are grouped by relevance to the role, not by category. The strongest evidence surfaces first. Gaps are visible — not hidden — because a recruiter who sees an unexplained gap can ask about it; one who doesn't makes a worse decision.</p>
+            <p><strong>The constraint held through every iteration:</strong> no information should be on the profile because it was available. Every element should be there because it helps a recruiter make a better decision. Those are not the same thing.</p>
+          </div>
+        </div>
+
+        <!-- Real screen: Welocity Candidate Profile — Recruiter View -->
+        <div class="web-screen-wrap reveal">
+          <p class="web-screen-label">Screen — Candidate Profile as Decision Surface (Recruiter View)</p>
+          <div class="web-screen">
+            <img src="../assets/images/welocity-candidate-recruiter-view.png"
+                 alt="Welocity candidate profile showing Ritika Sharma — a recruiter-facing decision surface with signal grouping, CV-to-JD match score (84%), AI interview score (92%), project history, project analysis scorecard, and education." />
+          </div>
+          <p class="web-screen-caption">The profile is structured to support evaluation at depth, quickly. Signals grouped by relevance — strongest evidence (match scores, AI interview, signal table) surfaces first. Gaps and analysis are visible, not hidden.</p>
+        </div>
+
+        <div class="decision reveal">
+          <p class="decision__kicker">Decision 02</p>
+          <h3 class="decision__title">Octo as Signal Interpreter, Not Judge</h3>
+          <div class="decision__stance"><p>The original direction was auto-ranking. I pushed back hard.</p></div>
+          <div class="decision__body">
+            <p>Auto-ranking hides its reasoning. Bias lives in the model. Accountability diffuses. Recruiters stop developing judgment — they start deferring to the score, which means the system's errors compound silently.</p>
+            <p>So Octo became an interpreter. Not: <em>"here are your top five candidates."</em> But: <em>"here's what's strong in this profile, here's what's unclear, here's how to think about the gap."</em></p>
+            <p><strong>The human stays in the decision seat.</strong> Octo increases the quality of what goes into that decision. That distinction is both an ethical position and a product differentiator. It's the one I'm most proud of holding ground on.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Candidate side -->
+    <section class="cs-section" id="candidate">
+      <div class="cs-section__eyebrow">
+        <span class="cs-section__num">06</span>
+        <span class="cs-section__label">Candidate Side — Key Decisions</span>
+      </div>
+      <h2 class="cs-section__title">CAREER AS A CONTINUOUS ARC.</h2>
+      <div class="cs-section__body">
+
+        <p>Every existing hiring platform has an implicit model: you are a job-seeker. Welocity rejects this entirely. The candidate is a person with a career — a trajectory that predates any specific application and continues long after it resolves.</p>
+
+        <div class="decision reveal">
+          <p class="decision__kicker">Decision 03</p>
+          <h3 class="decision__title">The North Star — Trajectory, Not Title</h3>
+          <div class="decision__stance"><p>Before anything else, the system needs to answer: where are you going?</p></div>
+          <div class="decision__body">
+            <p>Not "what jobs are available." Not "what are you qualified for right now." But: given your signal landscape, your strengths, your emerging capabilities — what is the coherent future you are building toward?</p>
+            <p>The North Star is not a job. It's a trajectory derived from your signals. Career Compass maps where you are. Career Galaxy shows what's possible. The North Star is what you orient toward. <strong>The design constraint:</strong> always earned by the data, never manufactured for comfort.</p>
+          </div>
+        </div>
+
+        <div class="decision reveal">
+          <p class="decision__kicker">Decision 04</p>
+          <h3 class="decision__title">Career Galaxy — Opportunities Orbiting the Candidate</h3>
+          <div class="decision__body">
+            <p>Career Galaxy replaces the job list — the most dehumanising interface in hiring — with an orbital model. Opportunities orbit the candidate, positioned by signal alignment and readiness. The closer an opportunity, the stronger the match and the higher the readiness.</p>
+            <p>The candidate is not a query running against a database. They are at the centre of a field, and the field is showing them where they stand relative to what's possible.</p>
+          </div>
+        </div>
+
+        <!-- Real screens: Welocity candidate side — 2-col web screens -->
+        <div class="web-screen-wrap reveal">
+          <p class="web-screen-label">Screen — Career Journey (North Star · Compass · Galaxy)</p>
+          <div class="web-screen">
+            <img src="../assets/images/welocity-candidate-journey.png"
+                 alt="Welocity candidate career journey view showing North Star trajectory, Career Compass with signal readiness, and Galaxy orbital model positioning opportunities by match and readiness" />
+          </div>
+          <p class="web-screen-caption">The candidate is at the centre — not a query running against a database. North Star defines the trajectory. Career Compass maps current readiness. Galaxy shows where opportunities sit relative to that readiness, not as a flat list.</p>
+        </div>
+
+        <div class="web-screen-wrap reveal">
+          <p class="web-screen-label">Screen — Candidate Dashboard (Transparency Tracker + Career Momentum)</p>
+          <div class="web-screen">
+            <img src="../assets/images/welocity-candidate-dashboard.png"
+                 alt="Welocity candidate dashboard showing Application Journey tracker, Recent Applications with status, and Career Momentum panel with skill readiness score" />
+          </div>
+          <p class="web-screen-caption">The candidate's relationship with the system doesn't pause between actions. The Application Journey tracker shows exactly where they are. Recent Applications shows live status. Career Momentum shows trajectory signals — the system keeps working even when nothing is explicitly happening.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Dignity Protocol -->
+    <section class="cs-section" id="dignity">
+      <div class="cs-section__eyebrow">
+        <span class="cs-section__num">07</span>
+        <span class="cs-section__label">The Dignity Protocol</span>
+      </div>
+      <h2 class="cs-section__title">REJECTION AS A SIGNAL EVENT.</h2>
+      <div class="cs-section__body">
+        <p>In every existing platform, rejection is an end state. Silence. In Welocity, rejection is a calibration moment. This required designing a specific protocol.</p>
+
+        <!-- Real screen: Candidate Overview with AI Assist -->
+        <div class="web-screen-wrap reveal">
+          <p class="web-screen-label">Screen — Candidate Overview (Recruiter View · Octo / AI Assist in action)</p>
+          <div class="web-screen">
+            <img src="../assets/images/welocity-candidate-numa-analysis.png"
+                 alt="Welocity candidate profile for Elizabeth Reid showing NUMA Verdict (Strong Hire), Risk Radar, Why Hire and Next Steps, Motivation and Story analysis, and AI Assist chat panel where Octo explains rather than ranks" />
+          </div>
+          <p class="web-screen-caption">Octo interprets — it never decides. The NUMA Verdict section explains the reasoning (Joining Probability High, Cultural Alignment Strong, Model Confidence 94%) alongside what the recruiter should say, avoid, and do next. The AI Assist panel answers specific recruiter questions rather than producing a ranked list.</p>
+        </div>
+
+        <div class="arch reveal">
+          <p class="arch__title">Dignity Protocol — the five-step rejection sequence</p>
+          <div style="display:flex;flex-direction:column;gap:1.25rem;">
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(184,147,90,0.5);line-height:1;min-width:2ch;">1</span>
+              <div>
+                <p style="font-size:0.6875rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(184,147,90,0.8);margin-bottom:0.25rem;">No Ghosting — System Constraint</p>
+                <p style="font-size:0.8125rem;color:rgba(242,237,229,0.45);line-height:1.6;">Guaranteed, respectful communication. Non-negotiable. Not a feature.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(184,147,90,0.5);line-height:1;min-width:2ch;">2</span>
+              <div>
+                <p style="font-size:0.6875rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(184,147,90,0.8);margin-bottom:0.25rem;">Signal Landscape Update</p>
+                <p style="font-size:0.8125rem;color:rgba(242,237,229,0.45);line-height:1.6;">System updates based on what evaluation revealed. Discrepancies become Exploration Signals.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(184,147,90,0.5);line-height:1;min-width:2ch;">3</span>
+              <div>
+                <p style="font-size:0.6875rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(184,147,90,0.8);margin-bottom:0.25rem;">Octo Interprets — Not Judges</p>
+                <p style="font-size:0.8125rem;color:rgba(242,237,229,0.45);line-height:1.6;">"Your strongest signals are here. The gap was here. Here's how to think about it." Clarity, not verdict.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(184,147,90,0.5);line-height:1;min-width:2ch;">4</span>
+              <div>
+                <p style="font-size:0.6875rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(184,147,90,0.8);margin-bottom:0.25rem;">Galaxy Recalibrates</p>
+                <p style="font-size:0.8125rem;color:rgba(242,237,229,0.45);line-height:1.6;">Opportunities reorganise around updated signal landscape. You see where you actually stand.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(184,147,90,0.5);line-height:1;min-width:2ch;">5</span>
+              <div>
+                <p style="font-size:0.6875rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(184,147,90,0.8);margin-bottom:0.25rem;">North Star Holds</p>
+                <p style="font-size:0.8125rem;color:rgba(242,237,229,0.45);line-height:1.6;">Trajectory doesn't collapse because a single application did. Calibration, not verdict.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="principle reveal">
+          <p class="principle__text">WE ARE NOT TRYING TO MAKE REJECTION FEEL GOOD. WE ARE TRYING TO REMOVE MEANINGLESSNESS FROM IT.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Active waiting -->
+    <section class="cs-section" id="waiting">
+      <div class="cs-section__eyebrow">
+        <span class="cs-section__num">08</span>
+        <span class="cs-section__label">Active Waiting</span>
+      </div>
+      <h2 class="cs-section__title">THE MISSING STATE.</h2>
+      <div class="cs-section__body">
+        <p>Between every candidate action — application submitted, interview done — the system goes silent. From the platform's view: processing state. From the candidate's view: anxiety, loss of control, disengagement.</p>
+        <p>I named this the missing state. Not a missing feature — a missing concept. The <strong>Transparency Tracker</strong> gives candidates signal visibility during evaluation. The absolute constraint: no fake progress bars, no manufactured optimism, no manipulative nudges. It had to be honest or it would erode trust worse than silence.</p>
+        <div class="callout reveal">
+          <p class="callout__label">Design Principle</p>
+          <p class="callout__text">"Systems fail not where they act, but where they go silent."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outcomes -->
+    <section class="cs-section" id="outcomes">
+      <div class="cs-section__eyebrow">
+        <span class="cs-section__num">09</span>
+        <span class="cs-section__label">Outcomes</span>
+      </div>
+      <h2 class="cs-section__title">WHAT CHANGED.</h2>
+      <div class="cs-section__body">
+        <div class="outcomes-grid reveal">
+          <div class="outcome-box">
+            <p class="outcome-box__value">−20%</p>
+            <p class="outcome-box__label">Reduction in recruiter evaluation time — from profiles requiring less mental reconstruction, not faster UI.</p>
+          </div>
+          <div class="outcome-box">
+            <p class="outcome-box__value">+40%</p>
+            <p class="outcome-box__label">Improvement in workflow completion — from flows designed around decision confidence, not task completion.</p>
+          </div>
+          <div class="outcome-box">
+            <p class="outcome-box__value">↓</p>
+            <p class="outcome-box__label">Candidate drop-off during waiting phases reduced after the Transparency Tracker.</p>
+          </div>
+          <div class="outcome-box">
+            <p class="outcome-box__value">✦</p>
+            <p class="outcome-box__label">Rejection described by early users as directional rather than discarding — the metric that mattered most.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learnings -->
+    <section class="cs-section" id="learnings">
+      <div class="cs-section__eyebrow">
+        <span class="cs-section__num">10</span>
+        <span class="cs-section__label">Learnings</span>
+      </div>
+      <h2 class="cs-section__title">WHAT THIS TAUGHT ME.</h2>
+      <div class="cs-section__body">
+        <p>Designing a system from scratch — not inheriting someone else's architecture — is a different kind of work. The temptation is to move fast to screens. The discipline is to stay in the system model long enough to get the architecture right, because screens built on a wrong model will fail no matter how well-designed they are.</p>
+        <div class="principle reveal">
+          <p class="principle__text">THE SHAPE OF THE SYSTEM IS DEFINED AS MUCH BY WHAT WE REFUSED TO BUILD AS BY WHAT WE BUILT.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Next -->
+  <a href="rcms.html" class="cs-next">
+    <div class="cs-next__inner">
+      <div>
+        <p class="cs-next__label">Next Project</p>
+        <p class="cs-next__title">RCMS — HPE — HPE</p>
+      </div>
+      <div class="cs-next__icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </a>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__hello">
+      <div class="footer__hello-rotator">
+        <div class="footer__hello-slide"><span class="footer__hello-slide-label">Say</span><span class="footer__hello-text">HELLO!</span></div>
+        <div class="footer__hello-slide"><span class="footer__hello-slide-label">Find the</span><span class="footer__hello-text">MISSING STATE.</span></div>
+        <div class="footer__hello-slide"><span class="footer__hello-slide-label">Not</span><span class="footer__hello-text">SCREENS.</span></div>
+      </div>
+    </div>
+    <a href="mailto:tosaurav15@gmail.com" class="footer__email">TOSAURAV15@GMAIL.COM</a>
+    <div class="footer__nav">
+      <div class="footer__nav-group">
+        <p class="footer__nav-group__label">Navigation</p>
+        <div class="footer__nav-group__links">
+          <a href="../index.html" class="footer__nav-link">Home</a>
+          <a href="../index.html#work" class="footer__nav-link">Work</a>
+          <a href="../index.html#about" class="footer__nav-link">About</a>
+        </div>
+      </div>
+      <div class="footer__nav-group">
+        <p class="footer__nav-group__label">Case Studies</p>
+        <div class="footer__nav-group__links">
+          <a href="welocity.html" class="footer__nav-link">Welocity</a>
+          <a href="rcms.html" class="footer__nav-link">RCMS — HPE</a>
+          <a href="hpe.html" class="footer__nav-link">The Hub — HPE</a>
+          <a href="pwc.html" class="footer__nav-link">PwC Dashboard</a>
+          <a href="indigo.html" class="footer__nav-link">IndiGo</a>
+        </div>
+      </div>
+      <div class="footer__nav-group">
+        <p class="footer__nav-group__label">Connect</p>
+        <div class="footer__nav-group__links">
+          <a href="https://linkedin.com/in/saurabhkumar-1" target="_blank" class="footer__nav-link">LinkedIn →</a>
+          <a href="mailto:tosaurav15@gmail.com" class="footer__nav-link">tosaurav15@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy">© 2026 Saurabh Kumar</span>
+      <span class="footer__made">Senior Product Designer · Open to Remote</span>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IndiGo — Saurabh Kumar</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+  <div id="progress"></div>
+
+  <nav class="nav is-scrolled" id="main-nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">SK</a>
+      <div class="nav__links">
+        <a href="../index.html#work" class="nav__link">Work</a>
+        <a href="../index.html#about" class="nav__link">About</a>
+        <a href="mailto:tosaurav15@gmail.com" class="nav__link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="cs-hero">
+    <div class="cs-hero__grain"></div>
+    <div class="cs-hero__accent-line"></div>
+    <div class="cs-hero__inner">
+      <a href="../index.html" class="cs-hero__back">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 5l-7 7 7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        All Work
+      </a>
+      <p class="cs-hero__eyebrow">IndiGo / Kellton Tech · Consumer Mobile · Aviation · 05/05</p>
+      <h1 class="cs-hero__title">
+        <span class="cs-hero__title-inner">INDIGO</span>
+        <span class="cs-hero__title-sub">Designing the Window Between Booking and Flying.</span>
+      </h1>
+      <div class="cs-hero__meta">
+        <div>
+          <p class="cs-hero__meta-label">Role</p>
+          <p class="cs-hero__meta-value">Lead UX — IA, interaction, visual</p>
+        </div>
+        <div>
+          <p class="cs-hero__meta-label">Context</p>
+          <p class="cs-hero__meta-value">Kellton Tech client · IndiGo consumer mobile app</p>
+        </div>
+        <div>
+          <p class="cs-hero__meta-label">Platform</p>
+          <p class="cs-hero__meta-value">iOS + Android</p>
+        </div>
+        <div>
+          <p class="cs-hero__meta-label">Scale</p>
+          <p class="cs-hero__meta-value">One of India's largest airlines by passenger volume</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-body">
+
+    <section class="cs-section" id="context">
+      <div class="cs-section__eyebrow"><span class="cs-section__num">01</span><span class="cs-section__label">Context</span></div>
+      <h2 class="cs-section__title">A WINDOW NOBODY HAD DESIGNED.</h2>
+      <div class="cs-section__body">
+        <p>Between booking confirmation and departure, a passenger's relationship with their airline is largely a void. The ticket is bought. The flight is weeks away. And yet this window — days or sometimes months long — is exactly when people plan, anticipate, and are most open to shaping their experience.</p>
+        <p>IndiGo was leaving it entirely undesigned. Add-on adoption was low. Revenue was being left behind.</p>
+        <div class="callout reveal">
+          <p class="callout__label">The Brief</p>
+          <p class="callout__text">"Redesign the add-on features to make them more discoverable and easier to purchase."</p>
+        </div>
+        <p>That framing pointed at the right problem. But it had the wrong diagnosis — and changing that diagnosis changed everything that followed.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" id="problem">
+      <div class="cs-section__eyebrow"><span class="cs-section__num">02</span><span class="cs-section__label">What Was Actually Wrong</span></div>
+      <h2 class="cs-section__title">NOT CONVERSION. DISCOVERY AND TIMING.</h2>
+      <div class="cs-section__body">
+        <p>The instinct was to treat this as a purchase friction problem. Cleaner UI. Better CTAs. Fewer steps to checkout.</p>
+        <p>An hour observing users revealed something different. Users weren't abandoning the add-on flow because checkout was hard. Most of them were never entering it at all.</p>
+        <p>Two failures were running simultaneously. Add-ons were invisible: users didn't know what categories existed. And they were mistimed: surfacing add-ons during booking — when users are managing flight selection, traveller details, and payment — was competing with maximum cognitive load. Users were in "complete the transaction" mode, not "plan my experience" mode.</p>
+        <div class="principle reveal">
+          <p class="principle__text">THE REVENUE OPPORTUNITY DOESN'T LIVE AT CHECKOUT. IT LIVES IN THE POST-BOOKING WINDOW — AND THE PRODUCT HAD NO WAY TO CAPTURE IT.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" id="decisions">
+      <div class="cs-section__eyebrow"><span class="cs-section__num">03</span><span class="cs-section__label">Key Design Decisions</span></div>
+      <h2 class="cs-section__title">THREE DECISIONS. ONE ARCHITECTURAL SHIFT.</h2>
+      <div class="cs-section__body">
+
+        <div class="decision reveal">
+          <p class="decision__kicker">Decision 01</p>
+          <h3 class="decision__title">Add-ons Don't Belong in the Booking Flow</h3>
+          <div class="decision__stance"><p>Designing add-ons as a checkout upsell is fighting the user's mental state. Post-confirmation is working with it.</p></div>
+          <div class="decision__body">
+            <p>A confirmed passenger has shifted from decision-making mode to anticipation mode. They're thinking about the trip, not protecting themselves from a transaction going wrong. That's the window. It lasts weeks. The booking flow lasts minutes.</p>
+            <p>We moved the primary add-on entry point to the booking details view — persistent, first-class, reachable at any time between purchase and departure. Add-Ons as a tab alongside Modify Booking, Check-in, Flight Status.</p>
+            <p><strong>The business model observation:</strong> the post-booking window is an extended revenue opportunity, not a single moment. A checkout upsell gets one shot. Post-booking access gets every visit between purchase and departure.</p>
+          </div>
+        </div>
+
+        <!-- Real screen: Booking Details -->
+        <div class="annotated-screen reveal">
+          <div class="phone-wrap">
+            <p class="phone-label">Screen — Booking Details</p>
+            <div class="phone-frame">
+              <img src="../assets/images/indigo-booking-details-addon-option.png" alt="IndiGo Booking Details screen showing the Add-Ons tab in the action grid alongside Modify Booking, Check-in and Flight Status" />
+            </div>
+            <p class="phone-caption">The Add-Ons tab lives here — first-class, persistent, always accessible from any confirmed booking.</p>
+          </div>
+          <div class="annotation-list">
+            <div class="annotation-item">
+              <span class="annotation-num">1</span>
+              <div class="annotation-text">
+                <strong>Add-Ons tab in the action grid</strong>
+                Sits alongside Modify Booking, Check-in, Flight Status — not buried inside a flow. One tap from any confirmed booking, any time.
+              </div>
+            </div>
+            <div class="annotation-item">
+              <span class="annotation-num">2</span>
+              <div class="annotation-text">
+                <strong>The booking flow stays clean</strong>
+                No upsell interruptions during purchase. Transaction anxiety resolved first; planning surface opens after.
+              </div>
+            </div>
+            <div class="annotation-item">
+              <span class="annotation-num">3</span>
+              <div class="annotation-text">
+                <strong>Extended revenue window</strong>
+                Every visit between purchase and departure is an opportunity. Not one shot at checkout — weeks of access.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="decision reveal">
+          <p class="decision__kicker">Decision 02</p>
+          <h3 class="decision__title">Categories Before Items — Show the Full Menu First</h3>
+          <div class="decision__stance"><p>When users don't enter a feature area, the first hypothesis is discoverability failure. You can't reduce friction for a journey the user never started.</p></div>
+          <div class="decision__body">
+            <p>The prior design buried add-ons. Users encountered a flat, undifferentiated list. Services as different as meal pre-booking, priority boarding, and sports equipment handling were presented without category structure — forcing users to read everything to understand what was available.</p>
+            <p>The redesigned Add-Ons landing page is <strong>categories first</strong>: Excess Baggage, 6E Eats, Fast Forward, Travel Assistance, Sports Equipment — each with description and savings badge. The savings badges are not decoration. They're the motivation to act now rather than at the airport, visible at the decision point.</p>
+          </div>
+        </div>
+
+        <!-- Real screen: Add-Ons Landing -->
+        <div class="annotated-screen reveal">
+          <div class="phone-wrap">
+            <p class="phone-label">Screen — Add-Ons Landing</p>
+            <div class="phone-frame">
+              <img src="../assets/images/indigo-addon-selection.png" alt="IndiGo Add-Ons landing page with five category cards, illustrations and savings badges" />
+            </div>
+            <p class="phone-caption">Categories first — users see the complete picture before committing to explore any single service.</p>
+          </div>
+          <div class="annotation-list">
+            <div class="annotation-item">
+              <span class="annotation-num">1</span>
+              <div class="annotation-text">
+                <strong>5 categories — full menu upfront</strong>
+                Excess Baggage, 6E Eats, Fast Forward, Travel Assistance, Sports Equipment. No flat list, no hunting through irrelevant options.
+              </div>
+            </div>
+            <div class="annotation-item">
+              <span class="annotation-num">2</span>
+              <div class="annotation-text">
+                <strong>Savings badges at category level</strong>
+                "Savings Upto 20%" is visible before the user decides whether to care — that's the motivation to act now, not at the airport.
+              </div>
+            </div>
+            <div class="annotation-item">
+              <span class="annotation-num">3</span>
+              <div class="annotation-text">
+                <strong>Illustrations reduce scan time</strong>
+                Visual icons help users orient without reading — faster scanning, direct path to what they already know they want.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="decision reveal">
+          <p class="decision__kicker">Decision 03</p>
+          <h3 class="decision__title">Dietary Preference is a Gate, Not a Filter</h3>
+          <div class="decision__stance"><p>A task-focused designer adds a filter. A user-focused designer makes it the first step.</p></div>
+          <div class="decision__body">
+            <p>Meals were the most-used add-on category (28% of add-on users) and the most friction-heavy to navigate. Users were repeatedly selecting and deselecting items — a behavioural signal that they were evaluating something the interface wasn't surfacing.</p>
+            <p>The root cause: dietary preference isn't a preference in the usual UX sense. It's a constraint that eliminates most available options. We made it the <strong>first interaction</strong>: a binary toggle — All Meals / Veg Only. One action takes you from a long mixed list to a short, directly relevant one. We also added full nutritional and allergen information — users weren't indecisive, they were uninformed.</p>
+          </div>
+        </div>
+
+        <!-- Real screen: Select Meal -->
+        <div class="annotated-screen reveal">
+          <div class="phone-wrap">
+            <p class="phone-label">Screen — Select Meal</p>
+            <div class="phone-frame">
+              <img src="../assets/images/indigo-select-meal.png" alt="IndiGo Select Meal screen showing dietary toggle at top, mixed meal list with Veg and Non-Veg items, and persistent Go to My Bag cart bar" />
+            </div>
+            <p class="phone-caption">The toggle is the first interaction — one action eliminates all irrelevant options. Persistent cart bar enables cross-category add-on building without a forced checkout moment.</p>
+          </div>
+          <div class="annotation-list">
+            <div class="annotation-item">
+              <span class="annotation-num">1</span>
+              <div class="annotation-text">
+                <strong>All Meals / Veg Only toggle at top</strong>
+                Not a filter tucked away — the first interaction. Selecting Veg Only immediately collapses the list to relevant items only.
+              </div>
+            </div>
+            <div class="annotation-item">
+              <span class="annotation-num">2</span>
+              <div class="annotation-text">
+                <strong>Veg / Non-Veg dot indicators</strong>
+                FSSAI-standard colour coding — instantly scannable without reading item names.
+              </div>
+            </div>
+            <div class="annotation-item">
+              <span class="annotation-num">3</span>
+              <div class="annotation-text">
+                <strong>Persistent "Go to My Bag" bar</strong>
+                "2 items added" stays visible — users can continue browsing other categories before checking out. No forced exit.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- What we chose not to build -->
+        <div class="callout reveal">
+          <p class="callout__label">What We Chose Not to Build</p>
+          <p class="callout__text">Push notifications and email upsells. The post-booking window only works as a design surface if users come to it on their own terms. The moment it becomes a notification channel, the relationship shifts from "this helps me plan" to "this is selling to me." That shift is immediate — and once it happens, the user's guard goes up for every subsequent interaction.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cs-section" id="journey">
+      <div class="cs-section__eyebrow"><span class="cs-section__num">04</span><span class="cs-section__label">Before and After</span></div>
+      <h2 class="cs-section__title">THE WINDOW AS A DESIGNED STATE.</h2>
+      <div class="cs-section__body">
+        <div class="arch reveal">
+          <p class="arch__title">Journey state — cognitive mode at each stage</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
+            <div>
+              <p style="font-size:0.6875rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(242,237,229,0.3);margin-bottom:0.75rem;">Before</p>
+              <div style="display:flex;flex-direction:column;gap:0.5rem;">
+                <div style="padding:0.4rem 0.75rem;border:1px solid rgba(242,237,229,0.1);font-size:0.75rem;color:rgba(242,237,229,0.4);">Search</div>
+                <div style="padding:0.4rem 0.75rem;border:1px solid rgba(184,147,90,0.4);font-size:0.75rem;color:rgba(184,147,90,0.8);">Booking + Add-ons (one shot only)</div>
+                <div style="padding:0.4rem 0.75rem;border:1px dashed rgba(242,237,229,0.08);font-size:0.75rem;color:rgba(242,237,229,0.2);font-style:italic;">✗ Void — no design</div>
+                <div style="padding:0.4rem 0.75rem;border:1px solid rgba(242,237,229,0.1);font-size:0.75rem;color:rgba(242,237,229,0.4);">Departure</div>
+              </div>
+            </div>
+            <div>
+              <p style="font-size:0.6875rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(242,237,229,0.3);margin-bottom:0.75rem;">After</p>
+              <div style="display:flex;flex-direction:column;gap:0.5rem;">
+                <div style="padding:0.4rem 0.75rem;border:1px solid rgba(242,237,229,0.1);font-size:0.75rem;color:rgba(242,237,229,0.4);">Search</div>
+                <div style="padding:0.4rem 0.75rem;border:1px solid rgba(242,237,229,0.1);font-size:0.75rem;color:rgba(242,237,229,0.4);">Booking (clean — no add-on interruption)</div>
+                <div style="padding:0.4rem 0.75rem;border:1px solid rgba(184,147,90,0.4);font-size:0.75rem;color:rgba(184,147,90,0.8);">Post-booking window — Add-ons always accessible</div>
+                <div style="padding:0.4rem 0.75rem;border:1px solid rgba(242,237,229,0.1);font-size:0.75rem;color:rgba(242,237,229,0.4);">Departure</div>
+              </div>
+            </div>
+          </div>
+          <p style="margin-top:1.25rem;font-size:0.75rem;color:rgba(242,237,229,0.3);font-style:italic;">Cognitive state during booking: transaction anxiety. Post-booking window: anticipation and planning. These require different product surfaces.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" id="outcomes">
+      <div class="cs-section__eyebrow"><span class="cs-section__num">05</span><span class="cs-section__label">Outcomes</span></div>
+      <h2 class="cs-section__title">WHAT USABILITY TESTING SHOWED.</h2>
+      <div class="cs-section__body">
+        <div class="outcomes-grid reveal">
+          <div class="outcome-box">
+            <p class="outcome-box__value">↑</p>
+            <p class="outcome-box__label">Task success rate for add-on selection improved across all usability test participants.</p>
+          </div>
+          <div class="outcome-box">
+            <p class="outcome-box__value">✓</p>
+            <p class="outcome-box__label">Category landing consistently resolved the "I didn't know this existed" problem — users discovered options they hadn't known were available.</p>
+          </div>
+          <div class="outcome-box">
+            <p class="outcome-box__value">↓</p>
+            <p class="outcome-box__label">The dietary toggle in meal selection eliminated the back-and-forth selection behaviour observed in the prior interface.</p>
+          </div>
+          <div class="outcome-box">
+            <p class="outcome-box__value">✦</p>
+            <p class="outcome-box__label">Post-launch measurement was outside this engagement's scope. The architecture was built for the metric that would have mattered: whether a passenger, weeks after booking, thinks to open the app and plan their trip.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" id="learnings">
+      <div class="cs-section__eyebrow"><span class="cs-section__num">06</span><span class="cs-section__label">Learnings</span></div>
+      <h2 class="cs-section__title">THE DROP-OFF IS UPSTREAM OF EVERYTHING.</h2>
+      <div class="cs-section__body">
+        <p>The instinct in conversion-focused product work is to look at where users drop off and fix the friction at that point. This project forced a different question: what if the drop-off isn't in the flow at all — what if it's before the flow begins?</p>
+        <p>When users never enter the flow, the design problem is upstream. The flow itself might be fine. The architecture that delivers users to it is what's broken.</p>
+        <div class="principle reveal">
+          <p class="principle__text">THE POST-BOOKING WINDOW AS A DESIGNED STATE IS APPLICABLE TO ANY PRODUCT WHERE A TRANSACTION CREATES A RELATIONSHIP THAT CONTINUES BEYOND THE CHECKOUT.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <a href="welocity.html" class="cs-next">
+    <div class="cs-next__inner">
+      <div>
+        <p class="cs-next__label">Back to First</p>
+        <p class="cs-next__title">WELOCITY</p>
+      </div>
+      <div class="cs-next__icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </a>
+
+  <footer class="footer">
+    <div class="footer__hello">
+      <div class="footer__hello-rotator">
+        <div class="footer__hello-slide"><span class="footer__hello-slide-label">Say</span><span class="footer__hello-text">HELLO!</span></div>
+        <div class="footer__hello-slide"><span class="footer__hello-slide-label">Find the</span><span class="footer__hello-text">MISSING STATE.</span></div>
+        <div class="footer__hello-slide"><span class="footer__hello-slide-label">Not</span><span class="footer__hello-text">SCREENS.</span></div>
+      </div>
+    </div>
+    <a href="mailto:tosaurav15@gmail.com" class="footer__email">TOSAURAV15@GMAIL.COM</a>
+    <div class="footer__nav">
+      <div class="footer__nav-group"><p class="footer__nav-group__label">Navigation</p><div class="footer__nav-group__links"><a href="../index.html" class="footer__nav-link">Home</a><a href="../index.html#work" class="footer__nav-link">Work</a><a href="../index.html#about" class="footer__nav-link">About</a></div></div>
+      <div class="footer__nav-group"><p class="footer__nav-group__label">Case Studies</p><div class="footer__nav-group__links"><a href="welocity.html" class="footer__nav-link">Welocity</a><a href="rcms.html" class="footer__nav-link">RCMS — HPE</a>
+          <a href="hpe.html" class="footer__nav-link">The Hub — HPE</a><a href="pwc.html" class="footer__nav-link">PwC Dashboard</a><a href="indigo.html" class="footer__nav-link">IndiGo</a></div></div>
+      <div class="footer__nav-group"><p class="footer__nav-group__label">Connect</p><div class="footer__nav-group__links"><a href="https://linkedin.com/in/saurabhkumar-1" target="_blank" class="footer__nav-link">LinkedIn →</a><a href="mailto:tosaurav15@gmail.com" class="footer__nav-link">tosaurav15@gmail.com</a></div></div>
+    </div>
+    <div class="footer__bottom"><span class="footer__copy">© 2026 Saurabh Kumar</span><span class="footer__made">Senior Product Designer · Open to Remote</span></div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
