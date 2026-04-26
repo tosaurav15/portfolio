@@ -76,7 +76,7 @@ Live URL: `https://tosaurav15.github.io/portfolio`
 |---|---------|------|-----------|
 | 01 | Welocity | NCG Product | AI signal architecture, dual-sided system |
 | 02 | HPE The Hub | Client — HPE | Multi-role ERG platform, 1,200+ users |
-| 03 | PwC Dashboard | Client — PwC | Executive decision surface, portfolio intelligence |
+| 03 | PwC Design System | Client — PwC | Power BI design system + 50–60 dashboards across 7+ business domains |
 | 04 | IndiGo | Client — IndiGo | Post-booking window, mobile UX |
 
 ---
