@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — A missing state</title>
+  <meta name="robots" content="noindex" />
+  <style>
+    :root {
+      --bg: #0C0C0C;
+      --fg: #FFFFFF;
+      --fg-dim: rgba(255,255,255,0.55);
+      --fg-muted: rgba(255,255,255,0.28);
+      --line: rgba(255,255,255,0.12);
+      --accent: #3DFFC0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 640px; }
+    .code {
+      font-size: clamp(5rem, 22vw, 12rem);
+      font-weight: 800;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.25) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .tag {
+      margin-top: 1.5rem;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .tag .accent { color: var(--accent); }
+    .desc {
+      margin-top: 1rem;
+      color: var(--fg-dim);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2.5rem;
+      padding: 0.85rem 1.6rem;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      color: var(--fg);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: border-color 200ms ease, transform 200ms ease;
+    }
+    .home:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .home svg { width: 18px; height: 18px; }
+    .sig {
+      margin-top: 3rem;
+      color: var(--fg-muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="code">404</div>
+    <p class="tag">You found a <span class="accent">missing state</span>.</p>
+    <p class="desc">This page doesn't exist, or it moved. Fitting, given the work — finding the states a system forgot to handle is rather the point. Let's get you back to one that's designed.</p>
+    <a href="/portfolio/" class="home">
+      Back to the portfolio
+      <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <p class="sig">Saurabh Kumar · Principal Product Designer</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+/* TEAM */
+  Designer & Developer: Saurabh Kumar
+  Role: Principal Product Designer
+  Contact: tosaurav15 [at] gmail.com
+  LinkedIn: linkedin.com/in/saurabhkumar-1
+  Location: Bengaluru, India
+
+/* SITE */
+  Last update: 2026/06/01
+  Language: English
+  Doctype: HTML5
+  Stack: HTML, CSS, JavaScript
+  Components: Three.js, GSAP, ScrollTrigger, Lenis

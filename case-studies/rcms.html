@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RCMS (HPE) — Delivery Operations Platform case study by Saurabh Kumar. 2,000 users, 8 modules, light + dark mode." />
+  <title>RCMS (HPE) — Saurabh Kumar</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet" />
+</head>
+<body data-page="case-study" data-accent="#5BA89A">
+
+  <div id="page-cover"></div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="pl-inner">
+      <div class="pl-name"><span class="pl-letter">S</span><span class="pl-letter">K</span></div>
+      <div class="pl-bar"><div class="pl-bar-fill"></div></div>
+      <span class="pl-label">Loading experience</span>
+    </div>
+  </div>
+  <canvas id="godray-canvas"></canvas>
+  <canvas id="bg-canvas"></canvas>
+  <div class="c-dot"></div>
+  <div class="c-view"><span>VIEW</span></div>
+  <div id="scroll-bar"></div>
+
+  <nav class="l-nav scrolled" id="main-nav">
+    <div class="l-nav__inner">
+      <a href="../index.html" class="l-logo">SK</a>
+      <div class="l-links">
+        <a href="../index.html#work" class="l-link">Work</a>
+        <a href="../index.html#about" class="l-link">About</a>
+        <a href="mailto:tosaurav15@gmail.com" class="l-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="cs-hero">
+    <canvas class="cs-canvas"></canvas>
+    <div class="cs-noise"></div>
+    <div class="cs-bar"></div>
+    <div class="cs-inner">
+      <a href="../index.html" class="cs-back">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 5l-7 7 7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        All Work
+      </a>
+      <p class="cs-eye">HPE / NCG Client · Enterprise Operations · Multi-role Platform · 02/05</p>
+      <h1 class="cs-title">
+        <span class="cs-title-row">RCMS</span>
+        <span class="cs-title-sub">One System. Two Engagement Models. 2,000 Users.</span>
+      </h1>
+      <div class="cs-stats">
+        <div>
+          <p class="cs-stat-label">Role</p>
+          <p class="cs-stat-val">Lead UX Designer — end-to-end</p>
+        </div>
+        <div>
+          <p class="cs-stat-label">Context</p>
+          <p class="cs-stat-val">Internal delivery ops platform · NCG client engagement for HPE</p>
+        </div>
+        <div>
+          <p class="cs-stat-label">Platform</p>
+          <p class="cs-stat-val">Web · Light + Dark mode · 8 modules</p>
+        </div>
+        <div>
+          <p class="cs-stat-label">Scale</p>
+          <p class="cs-stat-val">~2,000 users · Global delivery org · Still in daily active use</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-body">
+
+    <section class="chapter reveal" id="context">
+      <div class="ch-eye"><span class="ch-num">01</span><span class="ch-tag">Context</span></div>
+      <h2 class="ch-title">ONE DELIVERY ORG. TWO DIFFERENT CONTRACTS.</h2>
+      <div class="ch-body">
+        <p>HPE's global delivery organisation runs projects under two fundamentally different commercial models. Staff Augmentation: NCG consultants embedded in HPE projects, billed by time and rate. Managed Services: NCG delivers a defined scope, billed against milestones and cost targets.</p>
+        <p>Same delivery org. Same roles. Completely different financial logic, approval responsibilities, and billing triggers. Before RCMS, this was managed through a patchwork of spreadsheets, email threads, and disconnected tools — one for timesheets, another for approvals, nothing for billing visibility.</p>
+        <p>The result: fragmented data, approval delays, billing discrepancies, and no single source of truth for project status or resource cost across the org.</p>
+        <div class="hl-box reveal">
+          <p class="hl-label">The Brief</p>
+          <p class="hl-text">"Build a unified platform for HPE's delivery org — covering resource management, project tracking, timesheets, multi-role approvals, and billing — across both Staff Augmentation and Managed Services engagements."</p>
+        </div>
+        <p>The brief described a feature list. The design problem underneath it was architectural — and considerably harder.</p>
+      </div>
+    </section>
+
+    <section class="chapter reveal" id="problem">
+      <div class="ch-eye"><span class="ch-num">02</span><span class="ch-tag">The Real Problem</span></div>
+      <h2 class="ch-title">SAME ROLE. DIFFERENT QUESTION.</h2>
+      <div class="ch-body">
+        <p>The brief asked for "one unified platform." The problem was that the two engagement models aren't just operationally different — they answer different questions at the same workflow step.</p>
+        <p>A Delivery Manager approving a Managed Services cost is asking: did we deliver the scope against budget? The same DM approving a Staff Augmentation timesheet is asking: did this resource log accurate hours against allocation? Same role, same approval module, completely different decision context.</p>
+        <div class="principle reveal">
+          <p class="principle p">BUILD ONE LAYOUT FOR BOTH MODELS AND THE SYSTEM FORCES APPROVERS TO RECONSTRUCT CONTEXT BEFORE EVERY DECISION. THAT'S NOT A UI PROBLEM — IT'S A STRUCTURAL ONE.</p>
+        </div>
+        <p>The design challenge: build a platform coherent enough that it feels like one system, while making the bifurcation explicit enough that users are never confused about which model they're operating in. Invisible complexity causes errors. Over-surfaced complexity causes fatigue.</p>
+        <p>RCMS had to thread that needle — across 8 modules, 6 user roles, and a financial lifecycle that runs from rate cards through timesheets to monthly invoices.</p>
+      </div>
+    </section>
+
+    <section class="chapter reveal" id="decisions">
+      <div class="ch-eye"><span class="ch-num">03</span><span class="ch-tag">Design Decisions</span></div>
+      <h2 class="ch-title">FOUR DECISIONS THAT SHAPED THE SYSTEM.</h2>
+      <div class="ch-body">
+
+        <div class="dec-block reveal">
+          <p class="dec-kicker">Decision 01</p>
+          <h3 class="dec-title">Calendar Timesheet — Zero Learning Curve by Design</h3>
+          <div class="dec-note"><p>Every enterprise tool defaults to forms. A timesheet form asks: date, project, hours, activity. The user has to translate their week into fields. A calendar model removes the translation entirely — you log time where time lives.</p></div>
+          <div class="dec-body">
+            <p>My team's default was a form. I pushed back and proposed a calendar interaction model — and had to fight for it internally. The argument: every person in HPE's delivery org already operates in Google Calendar or Outlook daily. The calendar mental model — time mapped to days, weeks as units, visual density showing load — already exists in every user's head before they open RCMS.</p>
+            <p>For a global deployment of 2,000 users, eliminating the learning curve isn't a UX nicety. It's adoption at scale. No training programme was needed for timesheet onboarding. Users opened the calendar and understood immediately — because they'd been using this interaction model in their daily tools for years.</p>
+            <p>The calendar also surfaced patterns that a form couldn't: visual load distribution across the week, project overlap, gaps that could prompt before they became compliance issues.</p>
+          </div>
+        </div>
+
+        <div class="scr-wrap reveal">
+          <p class="scr-label">Screen — Calendar Timesheet (Light Mode)</p>
+          <div class="scr-frame" style="border-radius:10px;">
+            <img loading="lazy" src="../assets/images/rcms-calendar-timesheet.png" alt="RCMS Calendar Timesheet in light mode — left panel shows My Projects with WBS Code breakdown. Right panel shows May 2024 calendar with planned and actual hours displayed per day as colour-coded pill pairs." class="screen-full" />
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem;">
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Project Panel + Calendar Together</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">WBS codes, planned vs actual hours, and project status in the left panel. The calendar responds to which WBS code is selected — one view, complete context.</p>
+            </div>
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Planned vs Actual Per Day</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">Each day shows two values side by side — planned hours and actual hours logged. Discrepancies are visible at a glance, not discovered at submission.</p>
+            </div>
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Approval State in the Calendar</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">Colour-coded pills show approval status per day — Approved, In Progress, Rejected, Auto Timestamp. The calendar is also the status surface.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dec-block reveal">
+          <p class="dec-kicker">Decision 02</p>
+          <h3 class="dec-title">Two-Model Approval Architecture — Context Before Data</h3>
+          <div class="dec-note"><p>HPE had the approval hierarchy. What wasn't working was that every approver had to mentally reconstruct context before they could act. The fix: establish model context at the point of entry — before the data is shown.</p></div>
+          <div class="dec-body">
+            <p>The three approver roles — Delivery Manager, PMO, and Requester PM — each had defined authority. The architecture was HPE's. What we redesigned was the flow and the data interaction model.</p>
+            <p>Staff Augmentation and Managed Services generate different approval views for the same role. A DM viewing Staff Aug is checking timesheet actuals against resource allocation. The same DM viewing Managed Services is checking cost actuals against scope and budget. The underlying question is different. The data layout needs to reflect that difference — clearly, before the approver touches anything.</p>
+            <p>The redesign: model-specific view architectures within the same approval module. Navigation into an approval establishes the frame (which model, which type). The layout answers the right question for that model. Reconciliation views — showing discrepancies between actuals and approved figures — are a cross-check surface, not a duplicate workflow.</p>
+          </div>
+        </div>
+
+        <div class="scr-wrap reveal">
+          <p class="scr-label">Screen — DM Approval, Managed Services: Manage Service Cost View</p>
+          <div class="scr-frame" style="border-radius:10px;">
+            <img loading="lazy" src="../assets/images/rcms-approval-dm.png" alt="RCMS Delivery Manager Approval screen on Manage Service Cost tab — shows expandable project rows with milestone cost detail, variance figures, and inline completion % update." class="screen-full" />
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem;">
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Milestone Cost Detail</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">Managed Services approval expands to show Planned vs Actual cost, Rate Card Cost, FX variance — the financial question being answered here is scope delivery against budget, not hours.</p>
+            </div>
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Inline Update %</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">The DM can update completion percentage inline before approving — the decision and the data update happen in the same surface without navigating away.</p>
+            </div>
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Expandable Rows</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">Projects are scannable in collapsed state — expand only when needed. The DM sees all projects at a glance, drills into the one requiring action.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="scr-wrap reveal">
+          <p class="scr-label">Screen — DM Approval, Staff Augmentation: Timesheet Reconciliation View</p>
+          <div class="scr-frame" style="border-radius:10px;">
+            <img loading="lazy" src="../assets/images/rcms-approval-reconciliation.png" alt="RCMS Delivery Manager Approval screen on Timesheet Reconciliation tab — table with Employee Name, Rate Card, Planned Hrs (40 hrs each), and Reconciliation Hrs (32 hrs each) for 10 resources." class="screen-full" />
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem;">
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Different Question, Same Role</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">Staff Augmentation reconciliation asks: did planned hours match actual hours per resource? The data layout is completely different from Managed Services — because the decision is completely different.</p>
+            </div>
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Planned vs Reconciliation Hrs</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">40 hrs planned vs 32 hrs reconciled per resource — the variance is legible at a glance. The DM can identify discrepancies across all resources in one scan.</p>
+            </div>
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Model Context in the Tabs</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">Three tabs: Timesheet Actual / Timesheet Reconciliation / Manage Service Cost. The sub-tabs establish whether you're in Staff Aug or Managed Services. Context before data, at every level.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dec-block reveal">
+          <p class="dec-kicker">Decision 03</p>
+          <h3 class="dec-title">Rate Card → Billing Through-Line — Making the Financial Chain Visible</h3>
+          <div class="dec-note"><p>The rate card model was HPE's. The problem was that a rate card error doesn't surface as an error at the Admin module — it surfaces three steps later as a billing discrepancy, by which point the cause is obscured and the fix is disruptive.</p></div>
+          <div class="dec-body">
+            <p>I designed the interaction between the Admin (rate cards), Projects (resource allocation), and Billing modules to make the causal chain visible at each step. Assigning a rate card to a resource shows the downstream billing implication before confirmation. The billing calendar surfaces the rate card source for each line item — errors are traceable, not just visible. Monthly lock — the step that closes a billing period — is a deliberate confirmation surface with downstream consequences made explicit.</p>
+            <p>The goal: a PMO or finance user moving through rate cards, allocation, and billing shouldn't need to hold the connection between these modules in their head. The system makes it visible at the moment it matters.</p>
+          </div>
+        </div>
+
+        <div class="scr-wrap reveal">
+          <p class="scr-label">Screen — Billing Calendar, July 2024</p>
+          <div class="scr-frame" style="border-radius:10px;">
+            <img loading="lazy" src="../assets/images/rcms-billing-calendar.png" alt="RCMS Billing Calendar showing July 2024 monthly calendar with colour-coded billing deadline events mapped to specific dates. Right panel shows Add New Business Deadline form." class="screen-full" />
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem;">
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Billing Cycle as a Calendar</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">Billing deadlines mapped to calendar dates. The billing cycle isn't a list of tasks — it's a temporal structure users can navigate.</p>
+            </div>
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Colour-Coded Deadlines</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">Each deadline type has a distinct colour — expense submission, lock dates, billing drafts. The calendar shows the month's financial rhythm at a glance.</p>
+            </div>
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Configurable Deadlines</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">Finance admins add and manage business deadlines directly in the calendar view — the same surface used to read the schedule is the surface used to configure it.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dec-block reveal">
+          <p class="dec-kicker">Decision 04</p>
+          <h3 class="dec-title">Dark Mode Parity — A Design System Decision, Not a Feature</h3>
+          <div class="dec-note"><p>Dark mode wasn't a HPE requirement. It was my call. Delivery Managers and PMO users work long hours, often across time zones. A system that fatigues the people using it most intensively has a design problem.</p></div>
+          <div class="dec-body">
+            <p>Building dark mode parity meant designing every approval view, every timesheet screen, and every profile surface twice — not as an afterthought, but as a design system constraint from the start. Light and dark aren't two colour themes. They're two rendering contexts that both have to work at equal fidelity.</p>
+            <p>The constraint forced better decisions on contrast, hierarchy, and colour usage than a light-only design would have. When a component has to work on both surfaces, you can't lean on background colour to do structural work. The hierarchy has to be explicit in the layout, not just the palette.</p>
+          </div>
+        </div>
+
+        <div class="scr-wrap reveal">
+          <p class="scr-label">Screen — Calendar Timesheet, Dark Mode</p>
+          <div class="scr-frame" style="border-radius:10px;">
+            <img loading="lazy" src="../assets/images/rcms-timesheet-dark.png" alt="RCMS Calendar Timesheet in dark mode — same layout as light mode with full parity. Every interaction and every data point rendered at equal fidelity." class="screen-full" />
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem;">
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Full Parity</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">Every element present in light mode is present in dark. Not a dark colour wash. Full re-considered rendering at equal fidelity.</p>
+            </div>
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">User-Controlled Switch</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">Light / Dark toggle visible in the top right. For a system used across time zones and long sessions, this is not optional.</p>
+            </div>
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Layout-Led Hierarchy</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">Colour-coded pills maintain their meaning in dark mode. Hierarchy lives in the layout, not the background.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="chapter reveal" id="project-lifecycle">
+      <div class="ch-eye"><span class="ch-num">04</span><span class="ch-tag">Project Lifecycle</span></div>
+      <h2 class="ch-title">METHODOLOGY AS NAVIGABLE STRUCTURE.</h2>
+      <div class="ch-body">
+        <p>HPE runs projects through a defined delivery framework: Delivery Initiation → Start Right → Execute Right → Close Right → Compliance. This methodology was HPE's. Translating it into UX was the design challenge.</p>
+        <p>The risk with a phased methodology inside a product is that phases become tabs — passive labels that show status but don't drive action. A Project Manager opens their project, sees "Execute Right," and still has to know from memory what that phase requires.</p>
+        <div class="principle reveal">
+          <p class="principle p">A PHASE ISN'T A LABEL. IT'S A SURFACE THAT SHOWS WHAT'S DONE, WHAT'S PENDING, AND WHAT'S REQUIRED BEFORE THE NEXT PHASE OPENS.</p>
+        </div>
+        <p>Each phase in the Projects module is an active surface. Document requirements, scope items, resource plans — surfaced within the phase they belong to, at the moment they're relevant. The delivery methodology becomes structure the system enforces, not a framework the user has to remember.</p>
+
+        <div class="scr-wrap reveal">
+          <p class="scr-label">Screen — Project Overview</p>
+          <div class="scr-frame" style="border-radius:10px;">
+            <img loading="lazy" src="../assets/images/rcms-project-overview.png" alt="RCMS Project Overview screen showing project details panel with engagement model indicator, delivery phase progress, key project metrics, resource summary, and navigation to project sub-modules." class="screen-full" />
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem;">
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Engagement Model Visible</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">Staff Augmentation or Managed Services shown at overview level — the model context that governs every downstream workflow is never ambiguous.</p>
+            </div>
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Phase as Active State</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">Current phase shows completion state and outstanding requirements — not just a label. Where you are and what to do next, in the same surface.</p>
+            </div>
+            <div>
+              <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Project at a Glance</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">Key metrics, resource summary, and phase progress readable before navigating to any sub-module. Managers don't have to dig to know the health of a project.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter reveal" id="outcomes">
+      <div class="ch-eye"><span class="ch-num">05</span><span class="ch-tag">Outcomes</span></div>
+      <h2 class="ch-title">STILL RUNNING.</h2>
+      <div class="ch-body">
+        <div class="stat-grid reveal">
+          <div class="stat-box">
+            <p class="stat-val">~2,000</p>
+            <p class="stat-desc">Users across HPE's global delivery organisation — project managers, delivery managers, PMO, consultants, finance.</p>
+          </div>
+          <div class="stat-box">
+            <p class="stat-val">8</p>
+            <p class="stat-desc">Modules shipped: Projects, Timesheets, Approvals, Billing, Admin, Resources, Geo Escalations, User Profile.</p>
+          </div>
+          <div class="stat-box">
+            <p class="stat-val">2×</p>
+            <p class="stat-desc">Engagement models (Staff Augmentation + Managed Services) handled by one coherent platform — not two parallel systems.</p>
+          </div>
+          <div class="stat-box">
+            <p class="stat-val">Active</p>
+            <p class="stat-desc">Still in daily active use — timesheets, project tracking, approvals, billing. Not a pilot. Not a prototype. Running production.</p>
+          </div>
+        </div>
+        <p style="margin-top:2rem;font-size:1.0625rem;font-weight:300;line-height:1.8;color:rgba(154,163,178,1);">The calendar timesheet was adopted across 2,000 users without a training programme. The two-model approval architecture eliminated the context-reconstruction step that was driving approval delays. The financial through-line made billing discrepancies traceable to their source for the first time.</p>
+      </div>
+    </section>
+
+    <section class="chapter reveal" id="learnings">
+      <div class="ch-eye"><span class="ch-num">06</span><span class="ch-tag">Learnings</span></div>
+      <h2 class="ch-title">STRUCTURE THAT HOLDS.</h2>
+      <div class="ch-body">
+        <p>The hardest design problem in RCMS wasn't any individual module. It was maintaining coherence across a system with genuine architectural branching at its core. Two engagement models that are structurally different — but have to feel like one product.</p>
+        <p>The lesson: when a system has real bifurcation, the design response isn't to hide it. It's to make the bifurcation explicit at precisely the moment it matters — and invisible everywhere else. The model context needs to be established before the user touches data. After that, it can recede.</p>
+        <div class="principle reveal">
+          <p class="principle p">A SYSTEM DOESN'T FAIL WHERE IT ACTS. IT FAILS WHERE IT ASSUMES THE USER ALREADY KNOWS WHICH CONTEXT THEY'RE IN.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <a href="hpe.html" class="cs-next">
+    <div class="cs-next-inner">
+      <div>
+        <p class="cs-next-label">Next Project</p>
+        <p class="cs-next-name">THE HUB — HPE ERG</p>
+      </div>
+      <div class="cs-next-ico">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </a>
+
+  <footer class="l-footer">
+    <div class="footer-cta-wrap"><div class="footer-reel"><div class="footer-slide"><span class="footer-slide-pre">Say</span><span class="footer-slide-main">HELLO!</span></div><div class="footer-slide"><span class="footer-slide-pre">Find the</span><span class="footer-slide-main">MISSING STATE.</span></div><div class="footer-slide"><span class="footer-slide-pre">Not</span><span class="footer-slide-main">SCREENS.</span></div></div></div>
+    <a href="mailto:tosaurav15@gmail.com" class="footer-email-link">TOSAURAV15@GMAIL.COM</a>
+    <div class="footer-cols">
+      <div><p class="footer-col-head">Navigation</p><div class="footer-col-links"><a href="../index.html" class="footer-col-link">Home</a><a href="../index.html#work" class="footer-col-link">Work</a><a href="../index.html#about" class="footer-col-link">About</a></div></div>
+      <div><p class="footer-col-head">Case Studies</p><div class="footer-col-links"><a href="career-hiring-intelligence.html" class="footer-col-link">Career &amp; Hiring Intelligence</a><a href="rcms.html" class="footer-col-link">RCMS — HPE</a><a href="hpe.html" class="footer-col-link">The Hub — HPE</a><a href="pwc.html" class="footer-col-link">PwC Design System</a><a href="indigo.html" class="footer-col-link">IndiGo</a></div></div>
+      <div><p class="footer-col-head">Connect</p><div class="footer-col-links"><a href="https://linkedin.com/in/saurabhkumar-1" target="_blank" rel="noopener noreferrer" class="footer-col-link">LinkedIn →</a><a href="mailto:tosaurav15@gmail.com" class="footer-col-link">tosaurav15@gmail.com</a></div></div>
+    </div>
+    <div class="footer-base"><span class="footer-copy">© 2026 Saurabh Kumar</span><span class="footer-made">Principal Product Designer · Open to Remote</span></div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
