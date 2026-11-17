@@ -1,6 +1,6 @@
 # Saurabh Kumar — Portfolio
 
-Personal portfolio of **Saurabh Kumar**, Principal Product Designer (Bengaluru, India · open to remote).
+Personal portfolio of **Saurabh Kumar**, product designer and strategist (Bengaluru, India · open to remote).
 
 **Live site:** https://tosaurav15.github.io/portfolio/
 
