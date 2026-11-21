@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="PwC Design System — Power BI dashboards case study by Saurabh Kumar. 50-60 dashboards across 7 business domains." />
-  <title>PwC Design System — Saurabh Kumar</title>
+  <meta name="theme-color" content="#0C0C0C" />
+  <link rel="canonical" href="https://tosaurav15.github.io/portfolio/case-studies/pwc.html" />
+  <meta property="og:title" content="PwC Design System · Saurabh Kumar" />
+  <meta property="og:description" content="PwC Design System case study by Saurabh Kumar. A Power BI design system and 50 to 60 dashboards across 7+ business domains." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tosaurav15.github.io/portfolio/case-studies/pwc.html" />
+  <meta name="description" content="PwC Design System case study by Saurabh Kumar. A Power BI design system and 50 to 60 dashboards across 7+ business domains." />
+  <title>PwC Design System · Saurabh Kumar</title>
   <link rel="stylesheet" href="../assets/css/styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -15,54 +21,56 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet" />
 </head>
 <body data-page="case-study" data-accent="#D4845A">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <noscript><style>#preloader,#page-cover{display:none!important}</style></noscript>
 
-  <div id="page-cover"></div>
+  <div id="page-cover" aria-hidden="true"></div>
 
   <!-- Preloader -->
-  <div id="preloader">
+  <div id="preloader" aria-hidden="true">
     <div class="pl-inner">
       <div class="pl-name"><span class="pl-letter">S</span><span class="pl-letter">K</span></div>
       <div class="pl-bar"><div class="pl-bar-fill"></div></div>
       <span class="pl-label">Loading experience</span>
     </div>
   </div>
-  <canvas id="godray-canvas"></canvas>
-  <canvas id="bg-canvas"></canvas>
-  <div class="c-dot"></div>
-  <div class="c-view"><span>VIEW</span></div>
-  <div id="scroll-bar"></div>
+  <canvas id="godray-canvas" aria-hidden="true"></canvas>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="c-dot" aria-hidden="true"></div>
+  <div class="c-view" aria-hidden="true"><span>VIEW</span></div>
+  <div id="scroll-bar" aria-hidden="true"></div>
 
-  <nav class="l-nav scrolled" id="main-nav">
+  <nav class="l-nav scrolled" id="main-nav" aria-label="Main">
     <div class="l-nav__inner">
-      <a href="../index.html" class="l-logo">SK</a>
+      <a href="../index.html" class="l-logo" aria-label="Saurabh Kumar, home">SK</a>
       <div class="l-links">
-        <a href="../index.html#work" class="l-link">Work</a>
+        <a href="../work.html" class="l-link" aria-current="page">Work</a>
         <a href="../index.html#about" class="l-link">About</a>
         <a href="mailto:tosaurav15@gmail.com" class="l-link">Contact</a>
+        
+        <button type="button" class="l-motion" data-motion-toggle aria-pressed="false" aria-label="Pause motion" title="Pause motion"><svg class="ico-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14M16 5v14" stroke-width="2" stroke-linecap="round"/></svg><svg class="ico-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 5l12 7-12 7z" stroke-width="1.6" stroke-linejoin="round"/></svg></button>
       </div>
     </div>
   </nav>
 
-  <section class="cs-hero">
-    <canvas class="cs-canvas"></canvas>
+  <main id="main" tabindex="-1">
+  <section class="cs-hero" aria-labelledby="cs-title">
+    <canvas class="cs-canvas" aria-hidden="true"></canvas>
     <div class="cs-noise"></div>
     <div class="cs-bar"></div>
     <div class="cs-inner">
-      <a href="../index.html" class="cs-back">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 5l-7 7 7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        All Work
-      </a>
-      <p class="cs-eye">PwC / NCG Client · Power BI Design System · Enterprise Dashboards · 04/05</p>
-      <h1 class="cs-title">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Home</a></li><li><a href="../work.html">Case studies</a></li><li aria-current="page">PwC Design System</li></ol></nav>
+      <p class="cs-eye">PwC / NCG Client · Power BI Design System · Enterprise Dashboards · 10/11</p>
+      <h1 class="cs-title" id="cs-title">
         <span class="cs-title-row">PwC DESIGN SYSTEM</span>
         <span class="cs-title-sub">One Design Language Across a Fragmented Analytics Landscape.</span>
       </h1>
-      <div class="cs-stats">
-        <div><p class="cs-stat-label">Role</p><p class="cs-stat-val">Lead UX Designer — end-to-end</p></div>
-        <div><p class="cs-stat-label">Context</p><p class="cs-stat-val">Power BI · NCG client · 1.5 years</p></div>
-        <div><p class="cs-stat-label">Scale</p><p class="cs-stat-val">50–60 dashboards · 7+ business domains</p></div>
-        <div><p class="cs-stat-label">Stakeholders</p><p class="cs-stat-val">Internal managers · C-suite · External clients</p></div>
-      </div>
+      <dl class="cs-stats">
+        <div><dt class="cs-stat-label">Role</dt><dd class="cs-stat-val">Lead UX Designer, end to end</dd></div>
+        <div><dt class="cs-stat-label">Context</dt><dd class="cs-stat-val">Power BI · NCG client · 1.5 years</dd></div>
+        <div><dt class="cs-stat-label">Scale</dt><dd class="cs-stat-val">50 to 60 dashboards · 7+ business domains</dd></div>
+        <div><dt class="cs-stat-label">Stakeholders</dt><dd class="cs-stat-val">Internal managers · C-suite · External clients</dd></div>
+      </dl>
     </div>
   </section>
 
@@ -72,8 +80,8 @@
       <div class="ch-eye"><span class="ch-num">01</span><span class="ch-tag">Context</span></div>
       <h2 class="ch-title">EVERYONE WAS BUILDING THEIR OWN VERSION.</h2>
       <div class="ch-body">
-        <p>PwC's Power BI analytics environment had no design standards. Teams across banking, advisory, insurance, people management, project management, leads, and timesheet functions were each building dashboards independently — off-brand, inconsistent, no shared logic between them.</p>
-        <p>Over 1.5 years, I led UX for a Power BI design system and 50–60 dashboards across those domains, for stakeholders ranging from internal managers to C-suite executives to external clients at major banks and government agencies.</p>
+        <p>PwC's Power BI analytics environment had no design standards. Teams across banking, advisory, insurance, people management, project management, leads, and timesheet functions were each building dashboards on their own: off-brand, inconsistent, with no shared logic between them.</p>
+        <p>Over 1.5 years, I led UX for a Power BI design system and 50 to 60 dashboards across those domains, for stakeholders ranging from internal managers to C-suite executives to external clients at major banks and government agencies.</p>
         <div class="hl-box reveal">
           <p class="hl-label">The Brief</p>
           <p class="hl-text">"Design dashboards for our business functions."</p>
@@ -86,8 +94,8 @@
       <div class="ch-eye"><span class="ch-num">02</span><span class="ch-tag">What Was Actually Wrong</span></div>
       <h2 class="ch-title">THE PROBLEM BEFORE THE DASHBOARD PROBLEM.</h2>
       <div class="ch-body">
-        <p>PwC had a brand identity. Their Power BI environment ignored it. No palette rules for data visualisation. No standards for which chart type served which decision context. No component library. No layout grid. Each team doing its own thing.</p>
-        <p>The result: dashboards that looked like they came from different organisations — built for different stakeholders with no shared visual language, requiring users to relearn the interface with every new dashboard they opened.</p>
+        <p>PwC had a brand identity. Their Power BI environment ignored it. No palette rules for data visualization. No standards for which chart type served which decision context. No component library. No layout grid. Each team doing its own thing.</p>
+        <p>The result: dashboards that looked like they came from different organizations, built for different stakeholders with no shared visual language, requiring users to relearn the interface with every new dashboard they opened.</p>
         <p>Fixing individual dashboards one at a time would solve nothing permanently. Every new request would drift again. The design system had to come first.</p>
         <div class="principle reveal">
           <p class="principle p">A DESIGN SYSTEM DOESN'T CONSTRAIN THE WORK. IT'S WHAT MAKES SCALE POSSIBLE WITHOUT LOSING COHERENCE.</p>
@@ -103,20 +111,20 @@
         <div class="schema reveal">
           <p class="schema-title">What the design system had to govern across 7+ domains</p>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-            <div><p style="font-size:0.625rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(0,212,192,0.7);margin-bottom:0.25rem;">Brand → Data Viz</p><p style="font-size:0.75rem;font-weight:300;color:rgba(232,236,242,0.45);">PwC palette mapped to semantic data viz rules</p></div>
-            <div><p style="font-size:0.625rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(0,212,192,0.7);margin-bottom:0.25rem;">Chart Type Standards</p><p style="font-size:0.75rem;font-weight:300;color:rgba(232,236,242,0.45);">Which visualisation for which decision context</p></div>
-            <div><p style="font-size:0.625rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(0,212,192,0.7);margin-bottom:0.25rem;">Component Library</p><p style="font-size:0.75rem;font-weight:300;color:rgba(232,236,242,0.45);">KPI cards, filters, chart containers, navigation</p></div>
-            <div><p style="font-size:0.625rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(0,212,192,0.7);margin-bottom:0.25rem;">Layout Grid</p><p style="font-size:0.75rem;font-weight:300;color:rgba(232,236,242,0.45);">Flexible structure across data density and audience type</p></div>
+            <div><p style="font-size:0.625rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(0,212,192,0.9);margin-bottom:0.25rem;">Brand → Data Viz</p><p style="font-size:0.75rem;font-weight:300;color:rgba(232,236,242,0.75);">PwC palette mapped to semantic data viz rules</p></div>
+            <div><p style="font-size:0.625rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(0,212,192,0.9);margin-bottom:0.25rem;">Chart Type Standards</p><p style="font-size:0.75rem;font-weight:300;color:rgba(232,236,242,0.75);">Which visualization for which decision context</p></div>
+            <div><p style="font-size:0.625rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(0,212,192,0.9);margin-bottom:0.25rem;">Component Library</p><p style="font-size:0.75rem;font-weight:300;color:rgba(232,236,242,0.75);">KPI cards, filters, chart containers, navigation</p></div>
+            <div><p style="font-size:0.625rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(0,212,192,0.9);margin-bottom:0.25rem;">Layout Grid</p><p style="font-size:0.75rem;font-weight:300;color:rgba(232,236,242,0.75);">Flexible structure across data density and audience type</p></div>
           </div>
         </div>
 
         <div class="dec-block reveal">
           <p class="dec-kicker">Decision 01</p>
           <h3 class="dec-title">Translating Brand Identity into Data Visualisation Rules</h3>
-          <div class="dec-note"><p>PwC's brand guidelines were built for print and digital product — not data visualisation. The translation work was the first real design challenge.</p></div>
+          <div class="dec-note"><p>PwC's brand guidelines were built for print and digital product, not data visualization. The translation work was the first real design challenge.</p></div>
           <div class="dec-body">
-            <p>Power BI has hard constraints: limited typography control, native component behaviour, rendering differences across screen sizes. Mapping PwC's colour palette into semantic data viz rules meant deciding which colour signals an alert state, which signals positive trend, which is neutral — and making those rules consistent across banking, insurance, and HR data models that have very different threshold logic.</p>
-            <p><strong>The constraint that forced discipline:</strong> once a colour carries meaning in one dashboard, it has to carry the same meaning in all of them. That's what makes a system rather than a collection of dashboards.</p>
+            <p>Power BI has hard constraints: limited typography control, native component behavior, rendering differences across screen sizes. Mapping PwC's color palette into semantic data viz rules meant deciding which color signals an alert state, which signals positive trend, which is neutral, and making those rules consistent across banking, insurance, and HR data models that have very different threshold logic.</p>
+            <p><strong>The constraint that forced discipline:</strong> once a color carries meaning in one dashboard, it has to carry the same meaning in all of them. That's what makes a system rather than a collection of dashboards.</p>
           </div>
         </div>
 
@@ -126,7 +134,7 @@
           <div class="dec-note"><p>The question isn't "what chart looks good here?" It's "what decision does this data support, and which chart makes that decision easiest?"</p></div>
           <div class="dec-body">
             <p>Standardising chart type selection across domains required understanding decision-making patterns, not just data types. Time-series for trend analysis and forecasting quality. Bar for cross-entity comparison. Donut for composition at a glance. KPI cards for trigger-level signals that need to be read before everything else.</p>
-            <p>The same rules applied to a banking performance dashboard and a people management dashboard — different data, same decision logic. <strong>Consistency here is what trains the user to read faster over time.</strong></p>
+            <p>The same rules applied to a banking performance dashboard and a people management dashboard: different data, same decision logic. <strong>Consistency here is what trains the user to read faster over time.</strong></p>
           </div>
         </div>
 
@@ -134,8 +142,8 @@
           <p class="dec-kicker">Decision 03</p>
           <h3 class="dec-title">Stakeholder-Adaptive Layouts Within a Single System</h3>
           <div class="dec-body">
-            <p>A dashboard for an internal delivery manager and one for an external banking client have fundamentally different cognitive requirements — different information hierarchies, different levels of detail, different tolerances for ambiguity. A government agency client needs different framing than a C-suite executive reviewing the same underlying data.</p>
-            <p>The design system had to be specific enough to enforce visual consistency and flexible enough to serve all these contexts without breaking into parallel systems. The layout grid and component patterns were built to flex for stakeholder type — density, hierarchy depth, labelling detail — while the brand language stayed fixed.</p>
+            <p>A dashboard for an internal delivery manager and one for an external banking client have fundamentally different cognitive requirements: different information hierarchies, different levels of detail, different tolerances for ambiguity. A government agency client needs different framing than a C-suite executive reviewing the same underlying data.</p>
+            <p>The design system had to be specific enough to enforce visual consistency and flexible enough to serve all these contexts without breaking into parallel systems. The layout grid and component patterns were built to flex for stakeholder type (density, hierarchy depth and labeling detail), while the brand language stayed fixed.</p>
           </div>
         </div>
 
@@ -143,15 +151,15 @@
           <p class="dec-kicker">Decision 04</p>
           <h3 class="dec-title">Components That Reduced Design Debt on Every Subsequent Dashboard</h3>
           <div class="dec-body">
-            <p>KPI cards, filter panels, chart containers, navigation — standardised as reusable components. Any new dashboard request could be composed from the library rather than starting from scratch, which meant every subsequent dashboard was faster to build and automatically on-brand.</p>
+            <p>KPI cards, filter panels, chart containers and navigation were standardized as reusable components. Any new dashboard request could be composed from the library rather than starting from scratch, which meant every subsequent dashboard was faster to build and automatically on-brand.</p>
             <p>This was the compounding return on the upfront system work: <strong>the 50th dashboard took less design effort than the 5th, and looked more consistent than if each had been designed independently.</strong></p>
           </div>
         </div>
 
         <div class="scr-wrap reveal">
-          <p class="scr-label">Dashboard built on the design system — one of 50+ delivered across domains</p>
+          <p class="scr-label">Dashboard built on the design system, one of 50+ delivered across domains</p>
           <div class="scr-frame" style="border-radius:10px;">
-            <img loading="lazy" src="../assets/images/pwc-dashboard.jpg" alt="Power BI dashboard built on the PwC design system — showing KPI trigger layer, project health composition chart, trend analysis time-series, domain alignment view, and performance breakdown." class="screen-full" />
+            <img decoding="async" loading="lazy" src="../assets/images/pwc-dashboard.jpg" alt="Power BI dashboard built on the PwC design system (KPI values blurred), showing the KPI trigger layer, project health composition chart, trend analysis time-series, domain alignment view, and performance breakdown." class="screen-full" />
           </div>
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem;">
             <div>
@@ -160,11 +168,11 @@
             </div>
             <div>
               <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Brand-Consistent Palette</p>
-              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">PwC colour rules applied semantically to data visualisation — alert, positive, neutral states consistent across every dashboard in the system.</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">PwC color rules applied semantically to data visualization, with alert, positive and neutral states consistent across every dashboard in the system.</p>
             </div>
             <div>
               <p style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,212,192,0.8);margin-bottom:0.4rem;">Every Panel Earns Its Place</p>
-              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">Each chart type selected by decision logic, not data availability. Nothing on screen because the data existed — only what the specific audience needs to act.</p>
+              <p style="font-size:0.8125rem;font-weight:300;color:rgba(154,163,178,1);line-height:1.6;">Each chart type selected by decision logic, not data availability. Nothing is on screen just because the data existed, only what the specific audience needs to act.</p>
             </div>
           </div>
         </div>
@@ -177,10 +185,10 @@
       <h2 class="ch-title">WHAT THE SYSTEM MADE POSSIBLE.</h2>
       <div class="ch-body">
         <div class="stat-grid reveal">
-          <div class="stat-box"><p class="stat-val">50–60</p><p class="stat-desc">Dashboards delivered across 7+ business domains over 1.5 years — all on a single design foundation.</p></div>
+          <div class="stat-box"><p class="stat-val">50 to 60</p><p class="stat-desc">Dashboards delivered across 7+ business domains over 1.5 years, all on a single design foundation.</p></div>
           <div class="stat-box"><p class="stat-val">7+</p><p class="stat-desc">Business domains: Banking, Advisory, Insurance, Leads, People Management, Project Management, Timesheet.</p></div>
-          <div class="stat-box"><p class="stat-val">0→1</p><p class="stat-desc">PwC's first Power BI design system — brand-consistent, scalable foundation built from nothing.</p></div>
-          <div class="stat-box"><p class="stat-val">→</p><p class="stat-desc">Stakeholders from internal managers to C-suite to external clients at major banks and government agencies — all served by one coherent design language.</p></div>
+          <div class="stat-box"><p class="stat-val">0→1</p><p class="stat-desc">PwC's first Power BI design system: a brand-consistent, scalable foundation built from nothing.</p></div>
+          <div class="stat-box"><p class="stat-val">→</p><p class="stat-desc">Stakeholders from internal managers to C-suite to external clients at major banks and government agencies, all served by one coherent design language.</p></div>
         </div>
       </div>
     </section>
@@ -189,7 +197,7 @@
       <div class="ch-eye"><span class="ch-num">05</span><span class="ch-tag">Learnings</span></div>
       <h2 class="ch-title">DESIGN SYSTEMS ARE NOT DOCUMENTATION. THEY'RE DECISIONS.</h2>
       <div class="ch-body">
-        <p>The hardest part wasn't defining the components. It was getting the chart type standards right — because that required understanding decision-making patterns across radically different business domains, not just visual design principles. A chart that works for banking performance data doesn't automatically work for people management analytics.</p>
+        <p>The hardest part wasn't defining the components. It was getting the chart type standards right, because that required understanding decision-making patterns across radically different business domains, not just visual design principles. A chart that works for banking performance data doesn't automatically work for people management analytics.</p>
         <p>The other thing this project reinforced: communicating the reasoning behind every system decision to stakeholders who had never thought about their dashboards as a system before is itself a design challenge. The system only holds if the people using it understand why the rules exist.</p>
         <div class="principle reveal">
           <p class="principle p">BEFORE YOU CAN DESIGN 50 DASHBOARDS, YOU HAVE TO DECIDE WHAT MAKES A DASHBOARD.</p>
@@ -199,22 +207,19 @@
 
   </div>
 
-  <a href="indigo.html" class="cs-next">
-    <div class="cs-next-inner">
-      <div><p class="cs-next-label">Next Project</p><p class="cs-next-name">INDIGO</p></div>
-      <div class="cs-next-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    </div>
-  </a>
+  <a href="indigo.html" class="cs-next" rel="next"><div class="cs-next-inner"><div><p class="cs-next-label">Next Project</p><p class="cs-next-name">INDIGO</p></div><div class="cs-next-ico"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></a>
+  <nav class="cs-pager" aria-label="More case studies"><a href="cherrywork-itm.html" class="cs-pager-link" rel="prev"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M19 12H5M12 5l-7 7 7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="cs-pager-k">Previous</span> <span class="cs-pager-v">Cherrywork ITM</span></span></a><a href="../work.html" class="cs-pager-link cs-pager-all"><span>All 11 case studies</span> <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></nav>
 
+  </main>
   <footer class="l-footer">
-    <div class="footer-cta-wrap"><div class="footer-reel"><div class="footer-slide"><span class="footer-slide-pre">Say</span><span class="footer-slide-main">HELLO!</span></div><div class="footer-slide"><span class="footer-slide-pre">Find the</span><span class="footer-slide-main">MISSING STATE.</span></div><div class="footer-slide"><span class="footer-slide-pre">Not</span><span class="footer-slide-main">SCREENS.</span></div></div></div>
+    <div class="footer-cta-wrap" aria-hidden="true"><div class="footer-reel"><div class="footer-slide"><span class="footer-slide-pre">Say</span><span class="footer-slide-main">HELLO!</span></div><div class="footer-slide"><span class="footer-slide-pre">Find the</span><span class="footer-slide-main">MISSING STATE.</span></div><div class="footer-slide"><span class="footer-slide-pre">Not</span><span class="footer-slide-main">SCREENS.</span></div></div></div>
     <a href="mailto:tosaurav15@gmail.com" class="footer-email-link">TOSAURAV15@GMAIL.COM</a>
     <div class="footer-cols">
-      <div><p class="footer-col-head">Navigation</p><div class="footer-col-links"><a href="../index.html" class="footer-col-link">Home</a><a href="../index.html#work" class="footer-col-link">Work</a><a href="../index.html#about" class="footer-col-link">About</a></div></div>
-      <div><p class="footer-col-head">Case Studies</p><div class="footer-col-links"><a href="career-hiring-intelligence.html" class="footer-col-link">Career &amp; Hiring Intelligence</a><a href="rcms.html" class="footer-col-link">RCMS — HPE</a><a href="hpe.html" class="footer-col-link">The Hub — HPE</a><a href="pwc.html" class="footer-col-link">PwC Design System</a><a href="indigo.html" class="footer-col-link">IndiGo</a></div></div>
-      <div><p class="footer-col-head">Connect</p><div class="footer-col-links"><a href="https://linkedin.com/in/saurabhkumar-1" target="_blank" rel="noopener noreferrer" class="footer-col-link">LinkedIn →</a><a href="mailto:tosaurav15@gmail.com" class="footer-col-link">tosaurav15@gmail.com</a></div></div>
+      <div><h2 class="footer-col-head">Navigation</h2><div class="footer-col-links"><a href="../index.html" class="footer-col-link">Home</a><a href="../work.html" class="footer-col-link">All case studies</a><a href="../index.html#about" class="footer-col-link">About</a><a href="mailto:tosaurav15@gmail.com" class="footer-col-link">Contact</a></div></div>
+      <div><h2 class="footer-col-head">Case Studies</h2><div class="footer-col-links"><a href="career-hiring-intelligence.html" class="footer-col-link">Career &amp; Hiring Intelligence</a><a href="rcms.html" class="footer-col-link">RCMS for HPE</a><a href="hpe.html" class="footer-col-link">The Hub for HPE</a><a href="viatris.html" class="footer-col-link">Viatris</a><a href="murphy.html" class="footer-col-link">Murphy Oil</a><a href="baker-hughes.html" class="footer-col-link">Baker Hughes</a><a href="elc-returns.html" class="footer-col-link">Estée Lauder Companies</a><a href="pricing.html" class="footer-col-link">Intelligent Pricing</a><a href="cherrywork-itm.html" class="footer-col-link">Cherrywork ITM</a><a href="pwc.html" class="footer-col-link">PwC Design System</a><a href="indigo.html" class="footer-col-link">IndiGo</a></div></div>
+      <div><h2 class="footer-col-head">Connect</h2><div class="footer-col-links"><a href="https://linkedin.com/in/saurabhkumar-1" target="_blank" rel="noopener noreferrer" class="footer-col-link">LinkedIn<span class="sr-only"> (opens in a new tab)</span> <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="mailto:tosaurav15@gmail.com" class="footer-col-link">tosaurav15@gmail.com</a><span class="footer-col-link footer-col-text">Bengaluru, India</span></div></div>
     </div>
-    <div class="footer-base"><span class="footer-copy">© 2026 Saurabh Kumar</span><span class="footer-made">Product Design and Strategy · Open to remote</span></div>
+    <div class="footer-base"><span class="footer-copy">© 2026 Saurabh Kumar</span><span class="footer-made">Product Design and Strategy · Bengaluru · hybrid, on-site or remote</span></div>
   </footer>
 
   <script src="../assets/js/main.js"></script>
