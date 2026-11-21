@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Saurabh Kumar, product designer and strategist. I find the missing state before it becomes a broken product." />
-  <title>Saurabh Kumar — Product Designer</title>
+  <meta name="theme-color" content="#0C0C0C" />
+  <link rel="canonical" href="https://tosaurav15.github.io/portfolio/" />
+  <meta property="og:title" content="Saurabh Kumar · Product Designer" />
+  <meta property="og:description" content="Saurabh Kumar, product designer and strategist in Bengaluru. I find the missing state before it becomes a broken product." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tosaurav15.github.io/portfolio/" />
+  <meta name="description" content="Saurabh Kumar, product designer and strategist in Bengaluru. I find the missing state before it becomes a broken product." />
+  <title>Saurabh Kumar · Product Designer</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
 
   <!-- Fonts: Plus Jakarta Sans (UI) · Bebas Neue (display UI) · Fraunces (hero name — italic serif) -->
@@ -22,9 +28,11 @@
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 </head>
 <body data-page="index">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <noscript><style>#preloader,#page-cover{display:none!important}</style></noscript>
 
   <!-- ══════ PRELOADER ══════ -->
-  <div id="preloader">
+  <div id="preloader" aria-hidden="true">
     <div class="pl-inner">
       <div class="pl-name">
         <span class="pl-letter">S</span><span class="pl-letter">K</span>
@@ -37,64 +45,64 @@
   </div>
 
   <!-- Page transition -->
-  <div id="page-cover"></div>
+  <div id="page-cover" aria-hidden="true"></div>
 
   <!-- God Rays atmospheric canvas — behind everything -->
-  <canvas id="godray-canvas"></canvas>
+  <canvas id="godray-canvas" aria-hidden="true"></canvas>
 
   <!-- Ambient particles -->
-  <canvas id="bg-canvas"></canvas>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <!-- Custom Cursor -->
-  <div class="c-dot"></div>
-  <div class="c-view"><span>VIEW</span></div>
+  <div class="c-dot" aria-hidden="true"></div>
+  <div class="c-view" aria-hidden="true"><span>VIEW</span></div>
 
   <!-- Scroll progress -->
-  <div id="scroll-bar"></div>
+  <div id="scroll-bar" aria-hidden="true"></div>
 
   <!-- ══════ NAV ══════ -->
-  <nav class="l-nav" id="main-nav">
+  <nav class="l-nav" id="main-nav" aria-label="Main">
     <div class="l-nav__inner">
-      <a href="index.html" class="l-logo">SK</a>
+      <a href="index.html" class="l-logo" aria-label="Saurabh Kumar, home">SK</a>
       <div class="l-links">
-        <a href="#work"  class="l-link">Work</a>
+        <a href="work.html" class="l-link">Work</a>
         <a href="#about" class="l-link">About</a>
         <a href="mailto:tosaurav15@gmail.com" class="l-link">Contact</a>
         <span class="l-avail">Open to senior roles</span>
+        <button type="button" class="l-motion" data-motion-toggle aria-pressed="false" aria-label="Pause motion" title="Pause motion"><svg class="ico-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14M16 5v14" stroke-width="2" stroke-linecap="round"/></svg><svg class="ico-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 5l12 7-12 7z" stroke-width="1.6" stroke-linejoin="round"/></svg></button>
       </div>
     </div>
   </nav>
 
+  <main id="main" tabindex="-1">
   <!-- ══════ HERO ══════ -->
-  <section class="l-hero">
-    <canvas id="hero-canvas"></canvas>
+  <section class="l-hero" aria-label="Introduction">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
 
     <div class="hero-head">
-      <div class="hero-labels">
+      <p class="sr-only">Systems thinker, product designer, enterprise expert and signal architect.</p>
+      <div class="hero-labels" aria-hidden="true">
         <span class="hero-label">A Systems Thinker</span>
         <span class="hero-label">A Product Designer</span>
         <span class="hero-label">An Enterprise Expert</span>
         <span class="hero-label">A Signal Architect</span>
       </div>
-      <span class="hero-year">Est. 2014</span>
+      <span class="hero-year">Since 2014</span>
     </div>
 
-    <div class="hero-name">
-      <span class="hero-name-row">SAURABH</span>
-      <span class="hero-name-row">KUMAR</span>
-    </div>
+    <h1 class="hero-name"><span class="hero-name-row" aria-hidden="true">SAURABH</span><span class="hero-name-row" aria-hidden="true">KUMAR</span><span class="sr-only">Saurabh Kumar</span></h1>
 
     <div class="hero-foot">
       <p class="hero-tagline">
         10+ years in B2B SaaS. BFSI, aviation, legal, enterprise, AI workflows.<br>
-        <em>I design the systems behind products — not just the screens.</em>
+        <em>I design the systems behind products, not just the screens.</em>
       </p>
       <div class="hero-meta">
         <span class="hero-meta-item">Bengaluru, India</span>
-        <span class="hero-meta-item">Open to remote, India and US</span>
+        <span class="hero-meta-item">Hybrid, on-site or remote</span>
         <span class="hero-meta-item">Senior roles</span>
       </div>
-      <div class="hero-scroll">
+      <div class="hero-scroll" aria-hidden="true">
         <div class="hero-scroll-line"></div>
         <span class="hero-scroll-text">Scroll</span>
       </div>
@@ -102,7 +110,7 @@
   </section>
 
   <!-- ══════ TICKER ══════ -->
-  <div class="ticker">
+  <div class="ticker" aria-hidden="true">
     <div class="ticker-track">
       <div class="ticker-group">
         <span class="ticker-item">Systems Thinking <span class="ticker-sep"></span></span>
@@ -118,7 +126,7 @@
         <span class="ticker-item">Legal Tech <span class="ticker-sep"></span></span>
         <span class="ticker-item">HR Tech <span class="ticker-sep"></span></span>
         <span class="ticker-item">Design Systems <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Interaction Modelling <span class="ticker-sep"></span></span>
+        <span class="ticker-item">Interaction Modeling <span class="ticker-sep"></span></span>
       </div>
       <div class="ticker-group" aria-hidden="true">
         <span class="ticker-item">Systems Thinking <span class="ticker-sep"></span></span>
@@ -134,132 +142,96 @@
         <span class="ticker-item">Legal Tech <span class="ticker-sep"></span></span>
         <span class="ticker-item">HR Tech <span class="ticker-sep"></span></span>
         <span class="ticker-item">Design Systems <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Interaction Modelling <span class="ticker-sep"></span></span>
+        <span class="ticker-item">Interaction Modeling <span class="ticker-sep"></span></span>
       </div>
     </div>
   </div>
 
   <!-- ══════ WORK ══════ -->
-  <section id="work" class="works">
+  <section id="work" class="works works--home" aria-labelledby="work-title">
     <div class="works-header reveal">
-      <h2 class="works-title">Selected Work</h2>
-      <p class="works-sub">A selection of B2B SaaS and enterprise experiences built for decision-critical systems.</p>
+      <h2 class="works-title" id="work-title">Selected Work</h2>
+      <p class="works-sub">Four of 11 case studies. B2B SaaS and enterprise products built for decision-critical work.</p>
     </div>
 
-    <div class="works-grid">
-      <a href="case-studies/career-hiring-intelligence.html" class="w-card w-card--featured reveal">
+    <ul class="works-grid works-grid--home" role="list">
+      <li class="w-item w-item--featured"><a href="case-studies/career-hiring-intelligence.html" class="w-card w-card--featured reveal">
         <div class="w-card-img">
-          <img src="assets/images/product-recruiter-view.jpg" alt="Career &amp; Hiring Intelligence — career intelligence platform" loading="lazy" />
-          <div class="w-card-arrow">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <span class="w-card-num">01</span>
+          <img src="assets/images/product-candidate-journey.jpg" alt="" loading="lazy" decoding="async" />
+          <div class="w-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="w-card-num" aria-hidden="true">01</span>
         </div>
         <div class="w-card-info">
           <div class="w-card-left">
-            <span class="w-card-tags">career intelligence · ai design · indicator architecture · enterprise product</span>
+            <span class="w-card-tags"><span class="sr-only">In-house AI product. </span><span aria-hidden="true">in-house ai product · </span>career intelligence · explainable ai · recruiter and candidate sides</span>
             <h3 class="w-card-name">Career &amp; Hiring Intelligence</h3>
+            
           </div>
-          <div class="w-card-chips">
-            <span class="w-chip">Systems</span>
-            <span class="w-chip">AI</span>
-            <span class="w-chip">Dual-sided</span>
-          </div>
+          <div class="w-card-chips" aria-hidden="true"><span class="w-chip">AI</span><span class="w-chip">Systems</span><span class="w-chip">Two-sided</span></div>
         </div>
-      </a>
-
-      <a href="case-studies/rcms.html" class="w-card reveal d1">
+      </a></li>
+      <li class="w-item"><a href="case-studies/rcms.html" class="w-card reveal">
         <div class="w-card-img">
-          <img src="assets/images/rcms-calendar-timesheet.png" alt="RCMS — HPE Delivery Operations Platform" loading="lazy" />
-          <div class="w-card-arrow">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <span class="w-card-num">02</span>
+          <img src="assets/images/rcms-calendar-timesheet.png" alt="" loading="lazy" decoding="async" />
+          <div class="w-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="w-card-num" aria-hidden="true">02</span>
         </div>
         <div class="w-card-info">
           <div class="w-card-left">
-            <span class="w-card-tags">delivery ops · 2,000 users · 8 modules · light + dark</span>
-            <h3 class="w-card-name">RCMS — HPE</h3>
+            <span class="w-card-tags"><span class="sr-only">HPE · NCG client. </span><span aria-hidden="true">hpe · ncg client · </span>delivery operations · built for 2,000+ employees · 8 modules · light and dark</span>
+            <h3 class="w-card-name">RCMS for HPE</h3>
+            
           </div>
-          <div class="w-card-chips">
-            <span class="w-chip">Enterprise</span>
-            <span class="w-chip">Ops</span>
-          </div>
+          <div class="w-card-chips" aria-hidden="true"><span class="w-chip">Enterprise</span><span class="w-chip">Redesign</span></div>
         </div>
-      </a>
-
-      <a href="case-studies/hpe.html" class="w-card reveal d2">
+      </a></li>
+      <li class="w-item"><a href="case-studies/hpe.html" class="w-card reveal">
         <div class="w-card-img">
-          <img src="assets/images/hpe-home-feed.jpg" alt="The Hub — HPE ERG Platform" loading="lazy" style="object-position:top center" />
-          <div class="w-card-arrow">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <span class="w-card-num">03</span>
+          <img src="assets/images/hpe-home-feed.jpg" alt="" loading="lazy" decoding="async" style="object-position:top center" />
+          <div class="w-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="w-card-num" aria-hidden="true">03</span>
         </div>
         <div class="w-card-info">
           <div class="w-card-left">
-            <span class="w-card-tags">enterprise community · 6 roles · 1,200+ users · pwa</span>
-            <h3 class="w-card-name">The Hub — HPE</h3>
+            <span class="w-card-tags"><span class="sr-only">HPE · NCG client. </span><span aria-hidden="true">hpe · ncg client · </span>employee resource groups · 5 roles · built for ~1,200 employees · pwa</span>
+            <h3 class="w-card-name">The Hub for HPE</h3>
+            
           </div>
-          <div class="w-card-chips">
-            <span class="w-chip">Multi-role</span>
-            <span class="w-chip">PWA</span>
-          </div>
+          <div class="w-card-chips" aria-hidden="true"><span class="w-chip">Multi-role</span><span class="w-chip">PWA</span></div>
         </div>
-      </a>
-
-      <a href="case-studies/pwc.html" class="w-card reveal d1">
+      </a></li>
+      <li class="w-item"><a href="case-studies/viatris.html" class="w-card reveal">
         <div class="w-card-img">
-          <img src="assets/images/pwc-dashboard.jpg" alt="PwC Design System — Power BI Dashboards" loading="lazy" />
-          <div class="w-card-arrow">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <span class="w-card-num">04</span>
+          <img src="assets/images/viatris-event-detail.jpg" alt="" loading="lazy" decoding="async" />
+          <div class="w-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="w-card-num" aria-hidden="true">04</span>
         </div>
         <div class="w-card-info">
           <div class="w-card-left">
-            <span class="w-card-tags">power bi · 50–60 dashboards · 7+ domains · enterprise</span>
-            <h3 class="w-card-name">PwC Design System</h3>
+            <span class="w-card-tags"><span class="sr-only">Incture client. </span><span aria-hidden="true">incture client · </span>pharma · event sponsorship · employee benefits · client workshops</span>
+            <h3 class="w-card-name">Viatris</h3>
+            
           </div>
-          <div class="w-card-chips">
-            <span class="w-chip">Design System</span>
-            <span class="w-chip">Analytics</span>
-          </div>
+          <div class="w-card-chips" aria-hidden="true"><span class="w-chip">Enterprise</span><span class="w-chip">Regulated</span></div>
         </div>
-      </a>
+      </a></li>
+    </ul>
 
-      <a href="case-studies/indigo.html" class="w-card reveal d2">
-        <div class="w-card-img">
-          <img src="assets/images/indigo-addon-selection.jpg" alt="IndiGo — Post-booking Experience" loading="lazy" style="object-position:top center" />
-          <div class="w-card-arrow">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <span class="w-card-num">05</span>
-        </div>
-        <div class="w-card-info">
-          <div class="w-card-left">
-            <span class="w-card-tags">post-booking ux · revenue design · consumer mobile · aviation</span>
-            <h3 class="w-card-name">IndiGo</h3>
-          </div>
-          <div class="w-card-chips">
-            <span class="w-chip">Mobile</span>
-            <span class="w-chip">Aviation</span>
-          </div>
-        </div>
-      </a>
+    <div class="works-more reveal">
+      <a href="work.html" class="btn btn-outline btn-lg">View all 11 case studies <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </section>
 
   <!-- ══════ ABOUT ══════ -->
-  <section id="about" class="about">
-    <p class="sec-eye reveal">About</p>
+  <section id="about" class="about" aria-labelledby="about-title">
+    <h2 class="sec-eye reveal" id="about-title">About</h2>
     <div class="about-grid">
       <div class="reveal">
         <div class="about-photo">
-          <img src="assets/images/Saurabh_Profile.png" alt="Saurabh Kumar, product designer, Bengaluru" />
+          <img decoding="async" src="assets/images/Saurabh_Profile.png" alt="Saurabh Kumar, product designer, Bengaluru" />
         </div>
         <p class="about-caption-role">Product Design and Strategy</p>
-        <p class="about-caption-loc">Bengaluru, India · Open to Remote</p>
+        <p class="about-caption-loc">Bengaluru, India · Hybrid, on-site or remote</p>
       </div>
       <div class="reveal d1">
         <p class="about-text">
@@ -288,11 +260,11 @@
         <div class="about-ctas">
           <a href="mailto:tosaurav15@gmail.com" class="btn btn-solid">
             Get in touch
-            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a href="https://linkedin.com/in/saurabhkumar-1" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-            LinkedIn
-            <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            LinkedIn<span class="sr-only"> (opens in a new tab)</span>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </div>
@@ -300,64 +272,31 @@
   </section>
 
   <!-- ══════ CLIENTS ══════ -->
-  <section class="clients reveal">
-    <p class="clients-label">Selected clients</p>
-    <div class="clients-row">
-      <span class="client-name">PwC</span>
-      <span class="client-name">HPE</span>
-      <span class="client-name">IndiGo</span>
-      <span class="client-name">Clix Capital</span>
-      <span class="client-name">Edelweiss Tokio</span>
-      <span class="client-name">DuPont</span>
-      <span class="client-name">Club Mahindra</span>
-    </div>
+  <section class="clients reveal" aria-labelledby="clients-title">
+    <h2 class="clients-label" id="clients-title">Selected clients</h2>
+    <ul class="clients-row" role="list">
+      <li class="client-name">PwC</li>
+      <li class="client-name">HPE</li>
+      <li class="client-name">IndiGo</li>
+      <li class="client-name">Clix Capital</li>
+      <li class="client-name">Edelweiss Tokio</li>
+      <li class="client-name">DuPont</li>
+      <li class="client-name">Club Mahindra</li>
+    </ul>
   </section>
+
+  </main>
 
   <!-- ══════ FOOTER ══════ -->
   <footer class="l-footer">
-    <div class="footer-cta-wrap">
-      <div class="footer-reel">
-        <div class="footer-slide"><span class="footer-slide-pre">Say</span><span class="footer-slide-main">HELLO!</span></div>
-        <div class="footer-slide"><span class="footer-slide-pre">Find the</span><span class="footer-slide-main">MISSING STATE.</span></div>
-        <div class="footer-slide"><span class="footer-slide-pre">Design</span><span class="footer-slide-main">SYSTEMS.</span></div>
-        <div class="footer-slide"><span class="footer-slide-pre">Not</span><span class="footer-slide-main">SCREENS.</span></div>
-        <div class="footer-slide"><span class="footer-slide-pre">Open to</span><span class="footer-slide-main">REMOTE!</span></div>
-        <div class="footer-slide"><span class="footer-slide-pre">Senior</span><span class="footer-slide-main">ROLES.</span></div>
-      </div>
-    </div>
+    <div class="footer-cta-wrap" aria-hidden="true"><div class="footer-reel"><div class="footer-slide"><span class="footer-slide-pre">Say</span><span class="footer-slide-main">HELLO!</span></div><div class="footer-slide"><span class="footer-slide-pre">Find the</span><span class="footer-slide-main">MISSING STATE.</span></div><div class="footer-slide"><span class="footer-slide-pre">Design</span><span class="footer-slide-main">SYSTEMS.</span></div><div class="footer-slide"><span class="footer-slide-pre">Not</span><span class="footer-slide-main">SCREENS.</span></div><div class="footer-slide"><span class="footer-slide-pre">Based in</span><span class="footer-slide-main">BENGALURU.</span></div><div class="footer-slide"><span class="footer-slide-pre">Senior</span><span class="footer-slide-main">ROLES.</span></div></div></div>
     <a href="mailto:tosaurav15@gmail.com" class="footer-email-link">TOSAURAV15@GMAIL.COM</a>
     <div class="footer-cols">
-      <div>
-        <p class="footer-col-head">Navigation</p>
-        <div class="footer-col-links">
-          <a href="#work"  class="footer-col-link">Work</a>
-          <a href="#about" class="footer-col-link">About</a>
-          <a href="mailto:tosaurav15@gmail.com" class="footer-col-link">Contact</a>
-        </div>
-      </div>
-      <div>
-        <p class="footer-col-head">Case Studies</p>
-        <div class="footer-col-links">
-          <a href="case-studies/career-hiring-intelligence.html" class="footer-col-link">Career &amp; Hiring Intelligence</a>
-          <a href="case-studies/rcms.html"     class="footer-col-link">RCMS — HPE</a>
-          <a href="case-studies/hpe.html"      class="footer-col-link">The Hub — HPE</a>
-          <a href="case-studies/pwc.html"      class="footer-col-link">PwC Design System</a>
-          <a href="case-studies/indigo.html"   class="footer-col-link">IndiGo</a>
-        </div>
-      </div>
-      <div>
-        <p class="footer-col-head">Connect</p>
-        <div class="footer-col-links">
-          <a href="https://linkedin.com/in/saurabhkumar-1" target="_blank" rel="noopener noreferrer" class="footer-col-link">LinkedIn →</a>
-          <a href="mailto:tosaurav15@gmail.com" class="footer-col-link">tosaurav15@gmail.com</a>
-          <span class="footer-col-link">Bengaluru, India</span>
-        </div>
-      </div>
+      <div><h2 class="footer-col-head">Navigation</h2><div class="footer-col-links"><a href="index.html" class="footer-col-link">Home</a><a href="work.html" class="footer-col-link">All case studies</a><a href="#about" class="footer-col-link">About</a><a href="mailto:tosaurav15@gmail.com" class="footer-col-link">Contact</a></div></div>
+      <div><h2 class="footer-col-head">Case Studies</h2><div class="footer-col-links"><a href="case-studies/career-hiring-intelligence.html" class="footer-col-link">Career &amp; Hiring Intelligence</a><a href="case-studies/rcms.html" class="footer-col-link">RCMS for HPE</a><a href="case-studies/hpe.html" class="footer-col-link">The Hub for HPE</a><a href="case-studies/viatris.html" class="footer-col-link">Viatris</a><a href="case-studies/murphy.html" class="footer-col-link">Murphy Oil</a><a href="case-studies/baker-hughes.html" class="footer-col-link">Baker Hughes</a><a href="case-studies/elc-returns.html" class="footer-col-link">Estée Lauder Companies</a><a href="case-studies/pricing.html" class="footer-col-link">Intelligent Pricing</a><a href="case-studies/cherrywork-itm.html" class="footer-col-link">Cherrywork ITM</a><a href="case-studies/pwc.html" class="footer-col-link">PwC Design System</a><a href="case-studies/indigo.html" class="footer-col-link">IndiGo</a></div></div>
+      <div><h2 class="footer-col-head">Connect</h2><div class="footer-col-links"><a href="https://linkedin.com/in/saurabhkumar-1" target="_blank" rel="noopener noreferrer" class="footer-col-link">LinkedIn<span class="sr-only"> (opens in a new tab)</span> <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="mailto:tosaurav15@gmail.com" class="footer-col-link">tosaurav15@gmail.com</a><span class="footer-col-link footer-col-text">Bengaluru, India</span></div></div>
     </div>
-    <div class="footer-base">
-      <span class="footer-copy">© 2026 Saurabh Kumar</span>
-      <span class="footer-made">Product Design and Strategy · Open to remote, India and US</span>
-    </div>
+    <div class="footer-base"><span class="footer-copy">© 2026 Saurabh Kumar</span><span class="footer-made">Product Design and Strategy · Bengaluru · hybrid, on-site or remote</span></div>
   </footer>
 
   <script src="assets/js/main.js"></script>

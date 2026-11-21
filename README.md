@@ -1,21 +1,28 @@
-# Saurabh Kumar — Portfolio
+# Saurabh Kumar: Portfolio
 
-Personal portfolio of **Saurabh Kumar**, product designer and strategist (Bengaluru, India · open to remote).
+Personal portfolio of **Saurabh Kumar**, product designer and strategist (Bengaluru, India · hybrid, on-site or remote).
 
 **Live site:** https://tosaurav15.github.io/portfolio/
 
-I design enterprise systems where a decision carries real consequence, and I work at the problem-definition layer, not just execution. The case studies here cover AI hiring intelligence, enterprise delivery operations, executive dashboards, and aviation commerce.
+I design enterprise systems where a decision carries real consequence, and I work at the problem-definition layer, not just execution. The 11 case studies here cover AI hiring intelligence, enterprise platforms for HPE, regulated pharma, energy and retail operations, workflow and pricing products, a Power BI design system, and aviation commerce.
 
 ## Structure
 
 ```
 portfolio/
-├── index.html                 Home (hero, work, about, contact)
+├── index.html                 Home (hero, four featured case studies, about, contact)
+├── work.html                  All case studies
 ├── 404.html                   Custom not-found page
 ├── case-studies/
 │   ├── career-hiring-intelligence.html
-│   ├── rcms.html              RCMS — HPE
-│   ├── hpe.html               The Hub — HPE
+│   ├── rcms.html              RCMS for HPE
+│   ├── hpe.html               The Hub for HPE
+│   ├── viatris.html           Viatris
+│   ├── murphy.html            Murphy Oil
+│   ├── baker-hughes.html      Baker Hughes
+│   ├── elc-returns.html       Estée Lauder Companies returns
+│   ├── pricing.html           Intelligent Pricing
+│   ├── cherrywork-itm.html    Cherrywork ITM
 │   ├── pwc.html               PwC design system & dashboards
 │   └── indigo.html            IndiGo
 ├── assets/
@@ -33,7 +40,7 @@ portfolio/
 
 ## Built with
 
-Plain HTML, CSS, and JavaScript — no build step. Motion and effects use Three.js, GSAP (with ScrollTrigger), and Lenis, loaded from CDNs.
+Plain HTML, CSS, and JavaScript, with no build step. Motion and effects use Three.js, GSAP (with ScrollTrigger), and Lenis, loaded from CDNs.
 
 ## Running locally
 
@@ -45,7 +52,7 @@ python3 -m http.server 8000
 # then open http://localhost:8000
 ```
 
-Opening `index.html` directly via `file://` may break some fetches and routing; use the local server above.
+Opening `index.html` directly via `file://` may break some fetches and routing, so use the local server above.
 
 ## Deploying on GitHub Pages
 
@@ -55,6 +62,10 @@ Opening `index.html` directly via `file://` may break some fetches and routing; 
 4. The site publishes at `https://<username>.github.io/portfolio/`.
 
 The included `.nojekyll` file tells GitHub Pages to serve the files as-is without Jekyll processing.
+
+## Accessibility
+
+The site targets WCAG 2.1 AA: a skip link, landmarks, one H1 per page, visible focus, text contrast of at least 4.5:1, and a control to pause motion. It also follows the system reduced-motion setting.
 
 ## License
 

@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 — A missing state</title>
+  <title>404 · A missing state · Saurabh Kumar</title>
   <meta name="robots" content="noindex" />
   <style>
     :root {
       --bg: #0C0C0C;
       --fg: #FFFFFF;
-      --fg-dim: rgba(255,255,255,0.55);
-      --fg-muted: rgba(255,255,255,0.28);
+      --fg-dim: rgba(255,255,255,0.72);
+      --fg-muted: rgba(255,255,255,0.62);
       --line: rgba(255,255,255,0.12);
       --accent: #3DFFC0;
     }
@@ -29,6 +29,7 @@
       -webkit-font-smoothing: antialiased;
     }
     .wrap { max-width: 640px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
     .code {
       font-size: clamp(5rem, 22vw, 12rem);
       font-weight: 800;
@@ -66,6 +67,9 @@
       font-size: 0.95rem;
       transition: border-color 200ms ease, transform 200ms ease;
     }
+    .home:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 2.5rem; }
+    .actions .home { margin-top: 0; }
     .home:hover { border-color: var(--accent); transform: translateY(-2px); }
     .home svg { width: 18px; height: 18px; }
     .sig {
@@ -78,15 +82,18 @@
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="code">404</div>
-    <p class="tag">You found a <span class="accent">missing state</span>.</p>
-    <p class="desc">This page doesn't exist, or it moved. Fitting, given the work — finding the states a system forgot to handle is rather the point. Let's get you back to one that's designed.</p>
+  <main class="wrap">
+    <p class="code" aria-hidden="true">404</p>
+    <h1 class="tag"><span class="sr-only">Page not found. </span>You found a <span class="accent">missing state</span>.</h1>
+    <p class="desc">This page doesn't exist, or it moved. Fitting, given the work: finding the states a system forgot to handle is rather the point. Let's get you back to one that's designed.</p>
+    <div class="actions">
     <a href="/portfolio/" class="home">
       Back to the portfolio
-      <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
+    <a href="/portfolio/work.html" class="home">All case studies</a>
+    </div>
     <p class="sig">Saurabh Kumar · Product Design and Strategy</p>
-  </div>
+  </main>
 </body>
 </html>
