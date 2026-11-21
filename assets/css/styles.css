@@ -1514,3 +1514,229 @@ html.lenis {
   #godray-canvas { opacity: 0.5; }
   .pl-letter { font-size: clamp(3rem, 16vw, 5rem); }
 }
+
+/* ==========================================================
+   22 NOV 2026 · ACCESSIBILITY, NAVIGATION AND CASE STUDY INDEX
+   WCAG 2.1 AA: focus, contrast, motion, landmarks, targets.
+   ========================================================== */
+
+/* Contrast: secondary text clears 4.5:1 on #0C0C0C */
+:root { --fg-muted: rgba(255,255,255,0.62); --fg-dim: rgba(255,255,255,0.72); --focus: #3DFFC0; }
+
+.sr-only {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* Skip link: first stop for keyboard users */
+.skip-link {
+  position: fixed; top: 0.75rem; left: 0.75rem; z-index: 10000;
+  padding: 0.75rem 1.1rem; background: #fff; color: #000;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em;
+  transform: translateY(-160%); transition: transform var(--t-fast) ease;
+}
+.skip-link:focus { transform: translateY(0); }
+main:focus { outline: none; }
+
+/* Visible focus on everything interactive */
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+.w-card:focus-visible { outline-offset: -2px; }
+.w-card:focus-visible .w-card-name { text-decoration: underline; text-underline-offset: 0.2em; }
+
+/* The custom cursor only replaces the system cursor when JS turns it on, on a fine pointer */
+body, button, .w-card, .btn { cursor: auto; }
+a, button, .btn, .w-card { cursor: pointer; }
+html.has-custom-cursor body, html.has-custom-cursor a, html.has-custom-cursor button,
+html.has-custom-cursor .w-card, html.has-custom-cursor .btn { cursor: none; }
+html:not(.has-custom-cursor) .c-dot, html:not(.has-custom-cursor) .c-view { display: none; }
+
+/* Headings that kept their old visual classes */
+h1.hero-name, h2.sec-eye, h2.clients-label, h2.footer-col-head { font-weight: inherit; }
+h2.sec-eye { font-weight: 500; }
+h2.footer-col-head { font-weight: 600; }
+.clients-row { list-style: none; }
+
+/* Contrast fixes on text that was below 4.5:1 */
+.footer-col-head { color: rgba(255,255,255,0.62); }
+.footer-col-link { color: rgba(255,255,255,0.72); }
+.footer-col-link svg { width: 11px; height: 11px; stroke: currentColor; display: inline-block; vertical-align: -1px; }
+.footer-col-text { cursor: default; }
+.client-name { color: rgba(255,255,255,0.5); }
+.schema-node { color: rgba(255,255,255,0.75); }
+.cs-eye { color: rgba(255,255,255,0.68); }
+.hero-label.on { color: #fff; }
+
+/* Nav: current page and the motion toggle */
+.l-link[aria-current="page"] { color: #fff; }
+.l-link[aria-current="page"]::after { right: 0; }
+.l-motion {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border: 1px solid var(--line-mid); border-radius: 50%;
+  color: rgba(255,255,255,0.8); transition: border-color var(--t-fast) ease, color var(--t-fast) ease;
+}
+.l-motion:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
+.l-motion svg { width: 13px; height: 13px; stroke: currentColor; fill: none; }
+.l-motion .ico-play { display: none; }
+.l-motion[aria-pressed="true"] .ico-pause { display: none; }
+.l-motion[aria-pressed="true"] .ico-play { display: block; fill: currentColor; }
+
+/* Motion paused (by the toggle or by the system setting) */
+.motion-paused .ticker-track { animation-play-state: paused !important; }
+.motion-paused #godray-canvas, .motion-paused #bg-canvas { opacity: 0.25; }
+
+/* Breadcrumbs */
+.crumbs { margin-bottom: 2.5rem; }
+.crumbs ol { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; }
+.crumbs li {
+  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.68);
+}
+.crumbs li + li::before { content: "/"; margin-right: 0.5rem; color: rgba(255,255,255,0.4); }
+.crumbs a { color: rgba(255,255,255,0.68); text-decoration: underline; text-decoration-color: rgba(255,255,255,0.25); text-underline-offset: 0.25em; }
+.crumbs a:hover { color: #fff; text-decoration-color: currentColor; }
+.crumbs [aria-current="page"] { color: #fff; }
+
+/* Card grid as a list */
+.works-grid { list-style: none; }
+.w-item { display: flex; min-width: 0; }
+.w-item > .w-card { flex: 1; display: flex; flex-direction: column; }
+.w-item > .w-card .w-card-info { flex: 1; }
+.w-item--featured { grid-column: 1 / -1; }
+.works-grid--home { grid-template-columns: repeat(3, 1fr); }
+.w-card-summary {
+  margin-top: 0.6rem; max-width: 52ch;
+  font-size: 0.9rem; font-weight: 300; line-height: 1.55; color: rgba(255,255,255,0.72);
+}
+.works-more { display: flex; justify-content: center; margin-top: 3rem; }
+.btn-lg { padding: 16px 28px; font-size: 0.78rem; min-height: 48px; }
+.btn-lg svg { width: 14px; height: 14px; }
+
+/* Case study index page */
+.index-hero {
+  max-width: var(--max-w); margin: 0 auto;
+  padding: calc(var(--nav-h) + 4rem) var(--gutter) 2rem;
+}
+.index-title {
+  font-family: var(--font-disp); font-weight: 400;
+  font-size: clamp(3.5rem, 10vw, 9rem); line-height: 0.9; letter-spacing: 0.01em; color: #fff;
+}
+.index-lede {
+  margin-top: 1.75rem; max-width: 62ch;
+  font-size: clamp(1rem, 1.3vw, 1.15rem); font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.78);
+}
+.index-count {
+  margin-top: 2.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--line);
+  font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.62);
+}
+.works--index { padding-top: 1rem; }
+
+/* Case study pager */
+.cs-pager {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+  max-width: var(--max-w); margin: 0 auto; padding: 1.25rem var(--gutter);
+  border-top: 1px solid var(--line);
+}
+.cs-pager-link {
+  display: inline-flex; align-items: center; gap: 0.6rem; min-height: 44px;
+  font-size: 0.8rem; color: rgba(255,255,255,0.78); transition: color var(--t-fast) ease;
+}
+.cs-pager-link:hover { color: #fff; }
+.cs-pager-link svg { width: 14px; height: 14px; stroke: currentColor; flex-shrink: 0; }
+.cs-pager-k { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.62); }
+.cs-pager-all { font-weight: 500; }
+
+/* Case study body: components used by the rebuilt pages */
+.scr-wrap { margin: 2.5rem 0; }
+.scr-points {
+  list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem;
+}
+.scr-point-k {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(0,212,192,0.95); margin-bottom: 0.4rem;
+}
+.scr-point-v { font-size: 0.9rem; font-weight: 300; line-height: 1.6; color: rgba(190,197,208,1); }
+.scr-frame--portrait { max-width: 420px; margin-left: auto; margin-right: auto; }
+.ch-list { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; margin: 1rem 0 1.5rem; }
+.ch-list li { padding-left: 1.25rem; position: relative; line-height: 1.7; }
+.ch-list li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 6px; height: 1px; background: currentColor; opacity: 0.6; }
+.stat-note { margin-top: 2rem; font-size: 1.0625rem; font-weight: 300; line-height: 1.8; color: rgba(190,197,208,1); }
+.role-table-wrap { margin: 1.75rem 0; overflow-x: auto; }
+.role-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.role-table th, .role-table td { text-align: left; padding: 0.9rem 1rem; border-bottom: 1px solid var(--line-mid); vertical-align: top; }
+.role-table thead th { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.62); }
+.role-table tbody th { font-weight: 600; color: #fff; white-space: nowrap; }
+.role-table td { font-weight: 300; color: rgba(255,255,255,0.8); }
+.schema-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+.schema-col-k { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(0,212,192,0.95); margin-bottom: 0.5rem; }
+.schema-col-v { font-size: 0.9rem; font-weight: 300; line-height: 1.6; color: rgba(255,255,255,0.75); }
+.schema-flow { list-style: none; }
+.schema-flow li { display: inline-flex; align-items: center; gap: 6px; }
+.steps { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; }
+.step { display: flex; gap: 1rem; align-items: flex-start; }
+.step-n { font-family: var(--font-disp); font-size: 2rem; line-height: 1; min-width: 2ch; color: rgba(0,212,192,0.8); }
+.step-k { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(0,212,192,0.95); margin-bottom: 0.25rem; }
+.step-v { font-size: 0.9rem; font-weight: 300; line-height: 1.6; color: rgba(255,255,255,0.75); }
+
+/* Older pages used inline three-column grids under screens: stack them on small screens */
+@media (max-width: 1024px) {
+  .works-grid--home { grid-template-columns: 1fr 1fr; }
+  .works-grid--home .w-item--featured { grid-column: 1 / -1; }
+}
+@media (max-width: 768px) {
+  .works-grid--home, .works-grid--index { grid-template-columns: 1fr; }
+  .scr-points, .schema-cols { grid-template-columns: 1fr; }
+  .scr-wrap div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+  .schema div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  .w-card-info { flex-direction: column; }
+  .l-links { gap: 1.1rem; }
+  .cs-pager { flex-direction: column; align-items: flex-start; }
+  .role-table tbody th { white-space: normal; }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  .works-grid--index { grid-template-columns: 1fr 1fr; }
+  .works-grid--index .w-item--featured { grid-column: 1 / -1; }
+}
+
+/* Reduced motion: no reveals, no marquee, no smooth scrolling */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .ticker-track { animation: none !important; }
+  .w-card-img img { transition: none; }
+  #page-cover { display: none; }
+}
+
+/* Windows high contrast */
+@media (forced-colors: active) {
+  .w-card, .btn, .l-motion { border: 1px solid CanvasText; }
+  :focus-visible { outline-color: Highlight; }
+}
+
+/* If scripts don't run, content must still show */
+html:not(.js) .reveal { opacity: 1; transform: none; }
+html:not(.js) #preloader, html:not(.js) #page-cover { display: none; }
+
+/* Contrast and size pass (scripted audit, 22 Nov): every text below 4.5:1 raised */
+.hero-tagline em { color: rgba(255,255,255,0.72); }
+.hero-meta-item { color: rgba(255,255,255,0.66); font-size: 0.72rem; }
+.footer-copy, .footer-made { color: rgba(255,255,255,0.62); font-size: 0.72rem; }
+.cs-title-sub { color: rgba(255,255,255,0.66); }
+.cs-stat-label { color: rgba(255,255,255,0.62); font-size: 0.68rem; }
+.cs-stat-val { color: rgba(255,255,255,0.8); }
+.ch-num { color: rgba(255,255,255,0.45); }
+.ch-tag { color: rgba(255,255,255,0.66); font-size: 0.68rem; }
+.clients-label { color: rgba(255,255,255,0.62); font-size: 0.72rem; }
+.w-card-tags { font-size: 0.7rem; }
+.crumbs li { font-size: 0.72rem; }
+.crumbs a { display: inline-block; padding: 6px 0; }
+.l-link { padding: 12px 0; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+.scr-label { color: rgba(255,255,255,0.66); font-size: 0.68rem; }
+.cs-next-label { color: rgba(255,255,255,0.62); font-size: 0.68rem; }
+.ann-n { color: rgba(255,255,255,0.62); }
+.dec-note p { color: rgba(255,255,255,0.72) !important; }
+.cs-title-sub { line-height: 1.2; margin-top: 0.5rem; padding-bottom: 0.12em; }
+.crumbs ol { align-items: center; }
+.footer-slide-pre { color: rgba(255,255,255,0.5); }
