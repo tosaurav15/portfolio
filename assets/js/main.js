@@ -11,6 +11,7 @@
    ========================================================== */
 (function () {
   'use strict';
+  document.documentElement.classList.add('js');
 
   const THREE  = window.THREE   || null;
   const gsap   = window.gsap    || null;
@@ -26,6 +27,29 @@
   const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const IS_MOB  = window.innerWidth < 768;
   const HAS_GL  = !!window.WebGLRenderingContext;
+  const FINE_PTR = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  /* Motion: paused by the system setting, or by the visitor with the nav toggle (remembered) */
+  let MOTION_PAUSED = REDUCED;
+  try { const v = localStorage.getItem('sk-motion'); if (v === 'paused') MOTION_PAUSED = true; if (v === 'on') MOTION_PAUSED = false; } catch (e) {}
+  function applyMotion() {
+    document.documentElement.classList.toggle('motion-paused', MOTION_PAUSED);
+    document.querySelectorAll('[data-motion-toggle]').forEach(b => {
+      b.setAttribute('aria-pressed', MOTION_PAUSED ? 'true' : 'false');
+      const label = MOTION_PAUSED ? 'Play motion' : 'Pause motion';
+      b.setAttribute('aria-label', label); b.setAttribute('title', label);
+    });
+  }
+  function initMotionToggle() {
+    applyMotion();
+    document.querySelectorAll('[data-motion-toggle]').forEach(b => {
+      b.addEventListener('click', () => {
+        MOTION_PAUSED = !MOTION_PAUSED;
+        try { localStorage.setItem('sk-motion', MOTION_PAUSED ? 'paused' : 'on'); } catch (e) {}
+        applyMotion();
+      });
+    });
+  }
 
   const MOUSE = { x: 0, y: 0, nx: 0, ny: 0 };
   window.addEventListener('mousemove', e => {
@@ -42,14 +66,16 @@
   function _tick(t) {
     _raf = requestAnimationFrame(_tick);
     const dt = Math.min((t - _ts) / 1000, 0.05); _ts = t;
+    if (MOTION_PAUSED) return;
     for (let i = 0; i < _loops.length; i++) _loops[i](dt, t);
   }
   function startLoop() { if (!_raf) _raf = requestAnimationFrame(_tick); }
 
   /* ── INIT ─────────────────────────────────────────────── */
   function init() {
+    initMotionToggle();
     initPreloader();
-    initLenis();
+    if (!REDUCED) initLenis();
     initCursor();
     initNav();
     initProgress();
@@ -71,13 +97,14 @@
       }
     }
 
-    if (IS_IDX) initSplitText();
+    if (IS_IDX && !REDUCED) initSplitText();
   }
 
   /* ── PRELOADER ─────────────────────────────────────────── */
   function initPreloader() {
     const loader = document.getElementById('preloader');
     if (!loader) return;
+    if (REDUCED) { loader.style.display = 'none'; return; }
 
     const letters = loader.querySelectorAll('.pl-letter');
     const bar     = loader.querySelector('.pl-bar-fill');
@@ -273,6 +300,8 @@
     const dot  = document.querySelector('.c-dot');
     const view = document.querySelector('.c-view');
     if (!dot) return;
+    if (!FINE_PTR || REDUCED) return;            /* touch, pen and reduced motion keep the system cursor */
+    document.documentElement.classList.add('has-custom-cursor');
 
     let mx = -200, my = -200, vx = -200, vy = -200;
 
@@ -336,6 +365,7 @@
     if (!items.length) return;
     let i = 0;
     function tick() {
+      if (MOTION_PAUSED && i !== 0) return;
       items.forEach((w, idx) => {
         w.classList.remove('on', 'out');
         if (idx === i) w.classList.add('on');
@@ -352,6 +382,7 @@
     if (!slides.length) return;
     let i = 0;
     function tick() {
+      if (MOTION_PAUSED && i !== 0) return;
       slides.forEach((s, idx) => {
         s.classList.remove('on', 'off');
         if (idx === i) s.classList.add('on');
@@ -369,6 +400,9 @@
         const t = document.querySelector(this.getAttribute('href'));
         if (!t) return;
         e.preventDefault();
+        if (!t.hasAttribute('tabindex')) t.setAttribute('tabindex', '-1');
+        if (REDUCED || !window.__lenis) { t.scrollIntoView({ block: 'start' }); t.focus({ preventScroll: true }); return; }
+        t.focus({ preventScroll: true });
         if (window.__lenis) {
           window.__lenis.scrollTo(t, { duration: 1.4, easing: x => Math.min(1, 1.001 - Math.pow(2, -10 * x)) });
         } else {
@@ -384,12 +418,17 @@
     const cover = document.getElementById('page-cover');
     if (!cover) return;
 
+    if (REDUCED) { cover.style.display = 'none'; return; }
     gsap.set(cover, { scaleY: 1, transformOrigin: 'top' });
     gsap.to(cover, { scaleY: 0, duration: 0.7, ease: 'power3.out', delay: 0.05, transformOrigin: 'top' });
 
+    /* Back/forward cache: never come back to a covered page */
+    window.addEventListener('pageshow', ev => { if (ev.persisted) gsap.set(cover, { scaleY: 0 }); });
+
     document.addEventListener('click', e => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       const a = e.target.closest('a[href]');
-      if (!a) return;
+      if (!a || a.target === '_blank' || a.hasAttribute('download')) return;
       const href = a.getAttribute('href');
       if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('http') || !href.endsWith('.html')) return;
       const cur = window.location.pathname.split('/').pop() || 'index.html';
@@ -405,7 +444,7 @@
 
   /* ── MAGNETIC ─────────────────────────────────────────── */
   function initMagnetic() {
-    if (!gsap) return;
+    if (!gsap || !FINE_PTR || REDUCED) return;
     document.querySelectorAll('.btn, .cs-next-ico').forEach(el => {
       el.addEventListener('mousemove', e => {
         const r = el.getBoundingClientRect();
@@ -425,6 +464,7 @@
   function initScramble() {
     const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?#';
     const seen  = new Set();
+    if (REDUCED || MOTION_PAUSED) return;
     function scramble(el) {
       if (seen.has(el)) return; seen.add(el);
       const final = el.textContent.trim();
