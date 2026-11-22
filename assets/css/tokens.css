@@ -1,0 +1,136 @@
+/* ==========================================================================
+   REDLINE design system (accent: Sapphire, royal blue to deep navy) · tokens
+   Idea: the site reads like a design file under inspection. Spec marks
+   (selection boxes, redlines, measurements, state tags) carry the message:
+   "I find the missing state before it becomes a broken product."
+   Color is OKLCH. Contrast is checked in code (see DESIGN_SYSTEM.md).
+   ========================================================================== */
+
+@font-face{font-family:"Inter Display";src:url(../fonts/InterDisplay-SemiBold.woff) format("woff");font-weight:600;font-display:swap}
+@font-face{font-family:"Inter Display";src:url(../fonts/InterDisplay-Medium.woff) format("woff");font-weight:500;font-display:swap}
+@font-face{font-family:"Inter Text";src:url(../fonts/Inter-Regular.woff) format("woff");font-weight:400;font-display:swap}
+@font-face{font-family:"Inter Text";src:url(../fonts/Inter-Medium.woff) format("woff");font-weight:500;font-display:swap}
+
+:root{
+  /* ---- type ---- */
+  --font-display:"Inter Display",system-ui,sans-serif;
+  --font-text:"Inter Text",system-ui,sans-serif;
+  --fs-display:min(clamp(2.75rem,1.1rem + 5.8vw,7.25rem),10.5svh);   /* hero line */
+  --fs-h2:clamp(2rem,1.2rem + 2.6vw,3.75rem);
+  --fs-h3:clamp(1.5rem,1.15rem + 1vw,2.125rem);
+  --fs-lede:clamp(1.0625rem,1rem + .35vw,1.3125rem);
+  --fs-body:1.0625rem;      /* 17px */
+  --fs-small:.9375rem;      /* 15px */
+  --fs-spec:.8125rem;       /* 13px: spec labels, never smaller */
+  --track-display:-.042em;
+  --track-h:-.028em;
+
+  /* ---- space: 4px base, 8px rhythm ---- */
+  --s1:.25rem;--s2:.5rem;--s3:.75rem;--s4:1rem;--s5:1.5rem;--s6:2rem;--s7:3rem;--s8:4rem;--s9:6rem;--s10:9rem;
+  --gutter:clamp(1.25rem,.6rem + 2.8vw,3.5rem);
+  --max:1360px;
+  --radius-s:6px;--radius-m:12px;--radius-l:20px;
+
+  /* ---- motion ---- */
+  --ease-out:cubic-bezier(.22,1,.36,1);      /* settle: things arriving */
+  --ease-io:cubic-bezier(.65,0,.35,1);       /* move: things changing place */
+  --t-quick:160ms;--t-base:280ms;--t-slow:720ms;
+
+  /* ---- color: dark is the default canvas (midnight navy) ---- */
+  color-scheme:dark;
+  --bg:oklch(.145 .024 258);        /* #050a14 midnight */
+  --surface:oklch(.19 .028 258);    /* #0c1420 */
+  --surface-2:oklch(.235 .03 258);  /* #151e2c */
+  --line:oklch(.3 .03 258);         /* decorative rules only */
+  --line-strong:oklch(.52 .03 258); /* component borders, 3.6:1 */
+  --text:oklch(.97 .006 250);       /* 18.2:1 */
+  --muted:oklch(.76 .03 252);       /* 9.2:1 */
+  --redline:oklch(.72 .14 255);     /* the accent, solid: #65a7fa, 8.0:1 on bg */
+  --redline-ink:oklch(1 0 0);
+  /* the accent as a gradient, Sapphire: royal blue to deep navy. Every hue 248 to 264, no purple.
+     White ink on it is 4.97:1 or more */
+  --sig-a:oklch(.55 .19 257);       /* #0a6ddd royal */
+  --sig-m:oklch(.46 .19 261);       /* #084dbf sapphire */
+  --sig-b:oklch(.37 .15 263);       /* #10378d deep navy */
+  --signal-grad:linear-gradient(115deg,var(--sig-a) 0%,var(--sig-m) 48%,var(--sig-b) 100%);
+  --signal-ink:oklch(1 0 0);
+  --signal-text:linear-gradient(100deg,oklch(.82 .09 248),oklch(.72 .14 255) 45%,oklch(.66 .17 258));
+  /* glass sheen for every gradient chip and button */
+  --signal-sheen:inset 0 1px 0 rgb(255 255 255/.26),inset 0 -1px 0 rgb(0 8 30/.35),0 8px 24px -10px color-mix(in oklch,var(--sig-a) 75%,transparent);
+  --signal-glow:0 0 0 1px color-mix(in oklch,var(--sig-a) 55%,transparent),0 16px 44px -12px color-mix(in oklch,var(--sig-a) 85%,transparent);
+  /* page atmosphere: three soft blue light pools, fixed behind everything */
+  --aurora:radial-gradient(55% 45% at 88% -6%,oklch(.4 .17 260/.4),transparent 72%),
+           radial-gradient(45% 40% at -4% 34%,oklch(.34 .13 258/.28),transparent 70%),
+           radial-gradient(70% 55% at 50% 112%,oklch(.3 .12 263/.32),transparent 70%);
+  --hatch:color-mix(in oklch,var(--redline) 22%,transparent);
+  --grid-line:color-mix(in oklch,var(--text) 5%,transparent);
+  /* state palette: used only where a state is named */
+  --st-default:oklch(.76 .03 252);
+  --st-pending:oklch(.7 .05 250);
+  --st-ambiguous:var(--redline);
+  --st-failed:oklch(.72 .16 28);
+  --st-recovered:oklch(.72 .14 255);
+}
+
+:root[data-theme="light"]{
+  color-scheme:light;
+  --bg:oklch(.985 .005 250);        /* #f8fafd */
+  --surface:oklch(1 0 0);
+  --surface-2:oklch(.96 .008 250);
+  --line:oklch(.905 .01 250);
+  --line-strong:oklch(.62 .025 258);/* 3.5:1 */
+  --text:oklch(.2 .03 262);         /* 17.4:1 */
+  --muted:oklch(.47 .03 258);       /* 6.5:1 */
+  --redline:oklch(.44 .19 262);     /* #0a46b9, 7.8:1 on bg */
+  --redline-ink:oklch(1 0 0);
+  /* Sapphire on light: royal to midnight navy. White ink on it is 6.85:1 or more */
+  --sig-a:oklch(.48 .2 262);        /* #1251cc royal */
+  --sig-m:oklch(.4 .17 263);
+  --sig-b:oklch(.3 .12 264);        /* #0d2769 midnight navy */
+  --signal-grad:linear-gradient(115deg,var(--sig-a) 0%,var(--sig-m) 50%,var(--sig-b) 100%);
+  --signal-ink:oklch(1 0 0);
+  --signal-text:linear-gradient(100deg,oklch(.46 .2 262),oklch(.3 .11 264));
+  --signal-sheen:inset 0 1px 0 rgb(255 255 255/.32),inset 0 -1px 0 rgb(0 10 40/.25),0 6px 18px -8px color-mix(in oklch,var(--sig-a) 60%,transparent);
+  --signal-glow:0 0 0 1px color-mix(in oklch,var(--sig-a) 30%,transparent),0 14px 36px -14px color-mix(in oklch,var(--sig-a) 70%,transparent);
+  --aurora:radial-gradient(55% 45% at 88% -6%,oklch(.84 .08 258/.55),transparent 72%),
+           radial-gradient(45% 40% at -4% 34%,oklch(.9 .05 252/.5),transparent 70%),
+           radial-gradient(70% 55% at 50% 112%,oklch(.9 .05 258/.45),transparent 70%);
+  --hatch:color-mix(in oklch,var(--redline) 14%,transparent);
+  --grid-line:color-mix(in oklch,var(--text) 6%,transparent);
+  --st-default:oklch(.47 .03 258);
+  --st-pending:oklch(.5 .05 250);
+  --st-failed:oklch(.52 .17 30);
+  --st-recovered:oklch(.44 .19 262);
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme]){
+    color-scheme:light;
+    --bg:oklch(.985 .005 250);        /* #f8fafd */
+    --surface:oklch(1 0 0);
+    --surface-2:oklch(.96 .008 250);
+    --line:oklch(.905 .01 250);
+    --line-strong:oklch(.62 .025 258);/* 3.5:1 */
+    --text:oklch(.2 .03 262);         /* 17.4:1 */
+    --muted:oklch(.47 .03 258);       /* 6.5:1 */
+    --redline:oklch(.44 .19 262);     /* #0a46b9, 7.8:1 on bg */
+    --redline-ink:oklch(1 0 0);
+    /* Sapphire on light: royal to midnight navy. White ink on it is 6.85:1 or more */
+    --sig-a:oklch(.48 .2 262);        /* #1251cc royal */
+    --sig-m:oklch(.4 .17 263);
+    --sig-b:oklch(.3 .12 264);        /* #0d2769 midnight navy */
+    --signal-grad:linear-gradient(115deg,var(--sig-a) 0%,var(--sig-m) 50%,var(--sig-b) 100%);
+    --signal-ink:oklch(1 0 0);
+    --signal-text:linear-gradient(100deg,oklch(.46 .2 262),oklch(.3 .11 264));
+    --signal-sheen:inset 0 1px 0 rgb(255 255 255/.32),inset 0 -1px 0 rgb(0 10 40/.25),0 6px 18px -8px color-mix(in oklch,var(--sig-a) 60%,transparent);
+    --signal-glow:0 0 0 1px color-mix(in oklch,var(--sig-a) 30%,transparent),0 14px 36px -14px color-mix(in oklch,var(--sig-a) 70%,transparent);
+    --aurora:radial-gradient(55% 45% at 88% -6%,oklch(.84 .08 258/.55),transparent 72%),
+             radial-gradient(45% 40% at -4% 34%,oklch(.9 .05 252/.5),transparent 70%),
+             radial-gradient(70% 55% at 50% 112%,oklch(.9 .05 258/.45),transparent 70%);
+    --hatch:color-mix(in oklch,var(--redline) 14%,transparent);
+    --grid-line:color-mix(in oklch,var(--text) 6%,transparent);
+    --st-default:oklch(.47 .03 258);
+    --st-pending:oklch(.5 .05 250);
+    --st-failed:oklch(.52 .17 30);
+    --st-recovered:oklch(.44 .19 262);
+  }
+}
