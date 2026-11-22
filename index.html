@@ -1,304 +1,195 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0C0C0C" />
-  <link rel="canonical" href="https://tosaurav15.github.io/portfolio/" />
-  <meta property="og:title" content="Saurabh Kumar · Product Designer" />
-  <meta property="og:description" content="Saurabh Kumar, product designer and strategist in Bengaluru. I find the missing state before it becomes a broken product." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tosaurav15.github.io/portfolio/" />
-  <meta name="description" content="Saurabh Kumar, product designer and strategist in Bengaluru. I find the missing state before it becomes a broken product." />
-  <title>Saurabh Kumar · Product Designer</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
-
-  <!-- Fonts: Plus Jakarta Sans (UI) · Bebas Neue (display UI) · Fraunces (hero name — italic serif) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400;1,9..144,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
-
-  <!-- Three.js r128 -->
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
-  <!-- GSAP + ScrollTrigger + SplitText (all free since 2024) -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script>
-  <!-- Lenis smooth scroll -->
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Saurabh Kumar · Product design and strategy</title>
+<meta name="description" content="Saurabh Kumar designs the systems behind B2B SaaS products. 10+ years across BFSI, aviation, legal, enterprise tooling, HR tech and AI workflows. Based in Bengaluru.">
+<meta name="color-scheme" content="dark light">
+<script>/* set the theme before paint: saved choice, else system */(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t;else document.documentElement.dataset.theme=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}catch(e){}})();</script>
+<link rel="preload" href="assets/fonts/InterDisplay-SemiBold.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body data-page="index">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <noscript><style>#preloader,#page-cover{display:none!important}</style></noscript>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<canvas id="world" aria-hidden="true"></canvas>
+<div class="dev-sel" aria-hidden="true"><span class="ds-tag"><b data-v="frame">Frame 01</b> · <span data-v="state">screen</span></span><i class="h tl"></i><i class="h tr"></i><i class="h bl"></i><i class="h br"></i><span class="ds-dim" data-v="dim"></span></div>
 
-  <!-- ══════ PRELOADER ══════ -->
-  <div id="preloader" aria-hidden="true">
-    <div class="pl-inner">
-      <div class="pl-name">
-        <span class="pl-letter">S</span><span class="pl-letter">K</span>
-      </div>
-      <div class="pl-bar">
-        <div class="pl-bar-fill"></div>
-      </div>
-      <span class="pl-label">Loading experience</span>
-    </div>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Saurabh Kumar, home"><strong>Saurabh Kumar</strong><span>Product design and strategy</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a class="keep" href="#work">Work</a>
+      <a href="#method">Method</a>
+      <a href="#about">About</a>
+      <a class="keep" href="#contact">Contact</a>
+      <a class="nav-resume" href="assets/Saurabh_Kumar_Resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span><span class="sr-only">(PDF, opens in a new tab)</span></a>
+      <span class="status"><i aria-hidden="true"></i>Open to senior roles</span>
+      <button class="icon-btn motion-btn" type="button" aria-pressed="false" aria-label="Pause motion">
+        <svg class="pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="7" y="5" width="3.5" height="14" rx="1"/><rect x="13.5" y="5" width="3.5" height="14" rx="1"/></svg>
+        <svg class="play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+      </button>
+      <button class="icon-btn theme-toggle" type="button" aria-label="Switch to light theme">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </nav>
   </div>
+</header>
 
-  <!-- Page transition -->
-  <div id="page-cover" aria-hidden="true"></div>
-
-  <!-- God Rays atmospheric canvas — behind everything -->
-  <canvas id="godray-canvas" aria-hidden="true"></canvas>
-
-  <!-- Ambient particles -->
-  <canvas id="bg-canvas" aria-hidden="true"></canvas>
-
-  <!-- Custom Cursor -->
-  <div class="c-dot" aria-hidden="true"></div>
-  <div class="c-view" aria-hidden="true"><span>VIEW</span></div>
-
-  <!-- Scroll progress -->
-  <div id="scroll-bar" aria-hidden="true"></div>
-
-  <!-- ══════ NAV ══════ -->
-  <nav class="l-nav" id="main-nav" aria-label="Main">
-    <div class="l-nav__inner">
-      <a href="index.html" class="l-logo" aria-label="Saurabh Kumar, home">SK</a>
-      <div class="l-links">
-        <a href="work.html" class="l-link">Work</a>
-        <a href="#about" class="l-link">About</a>
-        <a href="mailto:tosaurav15@gmail.com" class="l-link">Contact</a>
-        <span class="l-avail">Open to senior roles</span>
-        <button type="button" class="l-motion" data-motion-toggle aria-pressed="false" aria-label="Pause motion" title="Pause motion"><svg class="ico-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14M16 5v14" stroke-width="2" stroke-linecap="round"/></svg><svg class="ico-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 5l12 7-12 7z" stroke-width="1.6" stroke-linejoin="round"/></svg></button>
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero-pin">
+      <div class="piece-sel" aria-hidden="true" data-state="undefined"><span class="ps-tag">Missing state · <b data-v="state">undefined</b></span><i class="h tl"></i><i class="h tr"></i><i class="h bl"></i><i class="h br"></i><span class="ps-dim" data-v="dim"></span></div>
+      <div class="wrap hero-copy">
+        <div class="hero-meta">
+          <span class="spec">10+ years in B2B SaaS</span>
+          <span class="spec">BFSI · aviation · legal · HR tech · AI</span>
+          <span class="spec">Bengaluru · hybrid, on-site or remote</span>
+        </div>
+        <h1 class="display" id="hero-title">I find the <span class="redline" data-state="undefined"><span class="rl-text">missing state</span><span class="rl-tag" aria-hidden="true"><span class="k">State</span><span class="v">undefined</span></span><i class="h tl"></i><i class="h tr"></i><i class="h bl"></i><i class="h br"></i></span> <span class="soft">before it becomes a broken product.</span></h1>
+        <p class="lede">I’m <strong>Saurabh Kumar</strong>. I design the systems behind B2B SaaS products: the states, transitions and decisions that most screens leave out.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#work">See selected work <span class="arr" aria-hidden="true">↓</span></a>
+        </div>
+        <div class="statusbar" aria-hidden="true" data-state="undefined">
+          <span class="sb-item st"><i></i><span class="k">State</span> <b data-i="state">undefined</b></span>
+          <span class="sb-item"><span class="k">System</span> <b data-i="count">34 of 35</b> states</span>
+        </div>
       </div>
+      <p class="scroll-cue"><span>Scroll to place the missing state</span> <span class="ar" aria-hidden="true">↓</span></p>
     </div>
-  </nav>
+  </section>
 
-  <main id="main" tabindex="-1">
-  <!-- ══════ HERO ══════ -->
-  <section class="l-hero" aria-label="Introduction">
-    <canvas id="hero-canvas" aria-hidden="true"></canvas>
-
-    <div class="hero-head">
-      <p class="sr-only">Systems thinker, product designer, enterprise expert and signal architect.</p>
-      <div class="hero-labels" aria-hidden="true">
-        <span class="hero-label">A Systems Thinker</span>
-        <span class="hero-label">A Product Designer</span>
-        <span class="hero-label">An Enterprise Expert</span>
-        <span class="hero-label">A Signal Architect</span>
+  <!-- WORK -->
+  <section class="sec" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="spec idx"><i aria-hidden="true"></i>01 · Selected work</span><h2 id="work-title">Flows, then systems, then roles, then AI.</h2><p class="sec-lede">Four of 11 case studies, from client workshops at Incture to an AI product at NCG. Each chapter picks up where the last one ends.</p></div>
+        <a class="btn btn-ghost" href="work.html">All case studies <span class="arr" aria-hidden="true">→</span></a>
       </div>
-      <span class="hero-year">Since 2014</span>
+      <ol class="chapters">
+        <li class="case" data-case="0" data-len="long">
+          <div class="case-text">
+            <span class="case-no" aria-hidden="true">01</span>
+            <span class="spec kicker">Chapter 1 · Flows · Incture client</span>
+            <h3><a href="case-studies/viatris.html">Viatris</a></h3>
+            <p>Pharma event sponsorship and employee benefits, shaped through client workshops.</p>
+            <ul class="chips" aria-label="Tags"><li class="chip">Enterprise</li><li class="chip">Regulated</li><li class="chip">Workshops</li></ul>
+            <div class="screens"><span class="spec">On the board</span><ol><li class="on"><span class="dot" aria-hidden="true"></span>Event calendar</li><li><span class="dot" aria-hidden="true"></span>Event detail</li><li><span class="dot" aria-hidden="true"></span>Add a booth</li><li><span class="dot" aria-hidden="true"></span>Approver remarks</li><li><span class="dot" aria-hidden="true"></span>Report date</li><li><span class="dot" aria-hidden="true"></span>User management</li></ol></div>
+            <span class="read" aria-hidden="true">Read the case study <span class="arr">→</span></span>
+          </div>
+          <figure class="case-fallback"><img src="assets/images/viatris-event-detail.jpg" alt="" decoding="async"></figure>
+        </li>
+        <li class="case" data-case="1" data-len="long">
+          <div class="case-text">
+            <span class="case-no" aria-hidden="true">02</span>
+            <span class="spec kicker">Chapter 2 · Systems · HPE, NCG client</span>
+            <h3><a href="case-studies/rcms.html">RCMS for HPE</a></h3>
+            <p>Delivery operations, built for 2,000+ employees across 8 modules, in light and dark.</p>
+            <ul class="chips" aria-label="Tags"><li class="chip">Enterprise</li><li class="chip">Redesign</li><li class="chip">Light and dark</li></ul>
+            <div class="screens"><span class="spec">In the stack</span><ol><li class="on"><span class="dot" aria-hidden="true"></span>Timesheet</li><li><span class="dot" aria-hidden="true"></span>Approvals</li><li><span class="dot" aria-hidden="true"></span>Billing</li><li><span class="dot" aria-hidden="true"></span>Projects</li><li><span class="dot" aria-hidden="true"></span>Project health</li><li><span class="dot" aria-hidden="true"></span>Admin</li><li><span class="dot" aria-hidden="true"></span>Profile</li><li><span class="dot" aria-hidden="true"></span>Geo escalations</li><li><span class="dot" aria-hidden="true"></span>Every module, in dark</li></ol></div>
+            <span class="read" aria-hidden="true">Read the case study <span class="arr">→</span></span>
+          </div>
+          <figure class="case-fallback"><img src="assets/images/rcms-calendar-timesheet.png" alt="" decoding="async"></figure>
+        </li>
+        <li class="case" data-case="2" data-len="long">
+          <div class="case-text">
+            <span class="case-no" aria-hidden="true">03</span>
+            <span class="spec kicker">Chapter 3 · Roles · HPE, NCG client</span>
+            <h3><a href="case-studies/hpe.html">The Hub for HPE</a></h3>
+            <p>Employee resource groups for about 1,200 employees: one platform with five roles, on the web and as a PWA.</p>
+            <ul class="chips" aria-label="Tags"><li class="chip">Multi-role</li><li class="chip">Web and PWA</li></ul>
+            <div class="screens"><span class="spec">Five roles, one platform</span><ol><li class="on"><span class="dot" aria-hidden="true"></span>Member</li><li><span class="dot" aria-hidden="true"></span>Club Owner</li><li><span class="dot" aria-hidden="true"></span>Event Manager</li><li><span class="dot" aria-hidden="true"></span>Moderator</li><li><span class="dot" aria-hidden="true"></span>Admin</li></ol></div>
+            <span class="read" aria-hidden="true">Read the case study <span class="arr">→</span></span>
+          </div>
+          <figure class="case-fallback"><img src="assets/tex/h-web-clubs.jpg" alt="" decoding="async"></figure>
+        </li>
+        <li class="case" data-case="3">
+          <div class="case-text">
+            <span class="case-no" aria-hidden="true">04</span>
+            <span class="spec kicker">Chapter 4 · AI · In-house product, NCG</span>
+            <h3><a href="case-studies/career-hiring-intelligence.html">Career &amp; Hiring Intelligence</a></h3>
+            <p>Career intelligence and explainable AI, designed for both the recruiter and the candidate side.</p>
+            <ul class="chips" aria-label="Tags"><li class="chip">AI</li><li class="chip">Systems</li><li class="chip">Two-sided</li></ul>
+            <div class="screens"><span class="spec">On screen</span><ol><li class="on"><span class="dot" aria-hidden="true"></span>Where I stand</li><li><span class="dot" aria-hidden="true"></span>Application journey</li></ol></div>
+            <span class="read" aria-hidden="true">Read the case study <span class="arr">→</span></span>
+          </div>
+          <figure class="case-fallback"><img src="assets/images/product-candidate-journey.jpg" alt="" decoding="async"></figure>
+        </li>
+      </ol>
     </div>
+  </section>
 
-    <h1 class="hero-name"><span class="hero-name-row" aria-hidden="true">SAURABH</span><span class="hero-name-row" aria-hidden="true">KUMAR</span><span class="sr-only">Saurabh Kumar</span></h1>
-
-    <div class="hero-foot">
-      <p class="hero-tagline">
-        10+ years in B2B SaaS. BFSI, aviation, legal, enterprise, AI workflows.<br>
-        <em>I design the systems behind products, not just the screens.</em>
-      </p>
-      <div class="hero-meta">
-        <span class="hero-meta-item">Bengaluru, India</span>
-        <span class="hero-meta-item">Hybrid, on-site or remote</span>
-        <span class="hero-meta-item">Senior roles</span>
+  <!-- METHOD -->
+  <section class="sec" id="method" aria-labelledby="method-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="spec idx"><i aria-hidden="true"></i>02 · Method</span><h2 id="method-title">Every product has five states. Most designs draw one.</h2></div>
       </div>
-      <div class="hero-scroll" aria-hidden="true">
-        <div class="hero-scroll-line"></div>
-        <span class="hero-scroll-text">Scroll</span>
+      <ol class="states reveal">
+        <li class="state" style="--c:var(--st-recovered)"><span class="node">Happy path</span><p>What most screens are designed for.</p><span class="spec">Drawn</span></li>
+        <li class="state" style="--c:var(--st-pending)"><span class="node">Pending</span><p>The system is working and the person is waiting.</p><span class="spec">Often drawn</span></li>
+        <li class="state missing"><span class="flag" aria-hidden="true">Missing state</span><span class="node">Ambiguous</span><p>Partial data, and nobody says what it means.</p><span class="spec"><b>Rarely drawn</b></span></li>
+        <li class="state" style="--c:var(--st-failed)"><span class="node">Failed silently</span><p>The system fails without telling anyone.</p><span class="spec">Rarely drawn</span></li>
+        <li class="state" style="--c:var(--st-recovered)"><span class="node">Recovered</span><p>The person knows what happened and what to do next.</p><span class="spec">Designed</span></li>
+      </ol>
+      <div class="principles">
+        <div><span class="spec">01</span><h3>States</h3><p>Map every state a screen can be in, not only the happy one.</p></div>
+        <div><span class="spec">02</span><h3>Transitions</h3><p>Define what moves a person, or a system, from one state to the next.</p></div>
+        <div><span class="spec">03</span><h3>Feedback loops</h3><p>Make sure the system says what happened and why.</p></div>
+        <div><span class="spec">04</span><h3>Decision surfaces</h3><p>Put the information where the person makes the call.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ══════ TICKER ══════ -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <div class="ticker-group">
-        <span class="ticker-item">Systems Thinking <span class="ticker-sep"></span></span>
-        <span class="ticker-item">AI Workflow Design <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Signal Architecture <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Enterprise UX <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Decision Surfaces <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Figma Expert <span class="ticker-sep"></span></span>
-        <span class="ticker-item">B2B SaaS <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Multi-role Platforms <span class="ticker-sep"></span></span>
-        <span class="ticker-item">BFSI <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Aviation <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Legal Tech <span class="ticker-sep"></span></span>
-        <span class="ticker-item">HR Tech <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Design Systems <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Interaction Modeling <span class="ticker-sep"></span></span>
-      </div>
-      <div class="ticker-group" aria-hidden="true">
-        <span class="ticker-item">Systems Thinking <span class="ticker-sep"></span></span>
-        <span class="ticker-item">AI Workflow Design <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Signal Architecture <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Enterprise UX <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Decision Surfaces <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Figma Expert <span class="ticker-sep"></span></span>
-        <span class="ticker-item">B2B SaaS <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Multi-role Platforms <span class="ticker-sep"></span></span>
-        <span class="ticker-item">BFSI <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Aviation <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Legal Tech <span class="ticker-sep"></span></span>
-        <span class="ticker-item">HR Tech <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Design Systems <span class="ticker-sep"></span></span>
-        <span class="ticker-item">Interaction Modeling <span class="ticker-sep"></span></span>
+  <!-- ABOUT -->
+  <section class="sec" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <div class="sec-head"><div><span class="spec idx"><i aria-hidden="true"></i>03 · About</span><h2 id="about-title" class="sr-only">About</h2></div></div>
+      <div class="about">
+        <p class="quote reveal">Most products don’t break on the happy path. They break in <em>the states nobody drew.</em></p>
+        <div class="body reveal">
+          <p>I’ve spent 10+ years in B2B SaaS, across BFSI, aviation, legal, enterprise tooling and HR tech.</p>
+          <p>My work moved from designing what people see to designing how systems think and respond. I treat trust and human judgment as load-bearing structure.</p>
+          <p>I’m looking for a senior role where design is part of deciding what gets built.</p>
+        </div>
+        <div class="clients reveal"><span class="spec">Selected clients</span><ul><li>PwC</li><li>HPE</li><li>IndiGo</li><li>Clix Capital</li><li>Edelweiss Tokio</li><li>DuPont</li><li>Club Mahindra</li></ul></div>
       </div>
     </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <span class="spec idx"><i aria-hidden="true"></i>04 · Contact</span>
+      <h2 id="contact-title">Let’s talk about the state nobody drew.</h2>
+      <a class="mail" href="mailto:tosaurav15@gmail.com">tosaurav15@gmail.com</a>
+      <div class="contact-links">
+        <a class="btn btn-ghost" href="https://linkedin.com/in/saurabhkumar-1" rel="noopener">LinkedIn <span class="arr" aria-hidden="true">↗</span><span class="sr-only">(opens LinkedIn)</span></a>
+        <a class="btn btn-ghost" href="assets/Saurabh_Kumar_Resume.pdf" target="_blank" rel="noopener">View résumé <span class="arr" aria-hidden="true">↗</span><span class="sr-only">(PDF, opens in a new tab)</span></a>
+        <a class="btn btn-ghost" href="assets/Saurabh_Kumar_Resume.pdf" download="Saurabh_Kumar_Resume.pdf">Download résumé (PDF) <span class="arr" aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span class="spec">© 2026 Saurabh Kumar · Bengaluru</span>
+    <span class="foot-ctl"><button class="grid-btn" type="button" aria-pressed="false">Show layout grid <kbd aria-hidden="true">G</kbd></button></span>
   </div>
+</footer>
+<div class="grid-overlay" aria-hidden="true"><div class="wrap"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
 
-  <!-- ══════ WORK ══════ -->
-  <section id="work" class="works works--home" aria-labelledby="work-title">
-    <div class="works-header reveal">
-      <h2 class="works-title" id="work-title">Selected Work</h2>
-      <p class="works-sub">Four of 11 case studies. B2B SaaS and enterprise products built for decision-critical work.</p>
-    </div>
-
-    <ul class="works-grid works-grid--home" role="list">
-      <li class="w-item w-item--featured"><a href="case-studies/career-hiring-intelligence.html" class="w-card w-card--featured reveal">
-        <div class="w-card-img">
-          <img src="assets/images/product-candidate-journey.jpg" alt="" loading="lazy" decoding="async" />
-          <div class="w-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <span class="w-card-num" aria-hidden="true">01</span>
-        </div>
-        <div class="w-card-info">
-          <div class="w-card-left">
-            <span class="w-card-tags"><span class="sr-only">In-house AI product. </span><span aria-hidden="true">in-house ai product · </span>career intelligence · explainable ai · recruiter and candidate sides</span>
-            <h3 class="w-card-name">Career &amp; Hiring Intelligence</h3>
-            
-          </div>
-          <div class="w-card-chips" aria-hidden="true"><span class="w-chip">AI</span><span class="w-chip">Systems</span><span class="w-chip">Two-sided</span></div>
-        </div>
-      </a></li>
-      <li class="w-item"><a href="case-studies/rcms.html" class="w-card reveal">
-        <div class="w-card-img">
-          <img src="assets/images/rcms-calendar-timesheet.png" alt="" loading="lazy" decoding="async" />
-          <div class="w-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <span class="w-card-num" aria-hidden="true">02</span>
-        </div>
-        <div class="w-card-info">
-          <div class="w-card-left">
-            <span class="w-card-tags"><span class="sr-only">HPE · NCG client. </span><span aria-hidden="true">hpe · ncg client · </span>delivery operations · built for 2,000+ employees · 8 modules · light and dark</span>
-            <h3 class="w-card-name">RCMS for HPE</h3>
-            
-          </div>
-          <div class="w-card-chips" aria-hidden="true"><span class="w-chip">Enterprise</span><span class="w-chip">Redesign</span></div>
-        </div>
-      </a></li>
-      <li class="w-item"><a href="case-studies/hpe.html" class="w-card reveal">
-        <div class="w-card-img">
-          <img src="assets/images/hpe-home-feed.jpg" alt="" loading="lazy" decoding="async" style="object-position:top center" />
-          <div class="w-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <span class="w-card-num" aria-hidden="true">03</span>
-        </div>
-        <div class="w-card-info">
-          <div class="w-card-left">
-            <span class="w-card-tags"><span class="sr-only">HPE · NCG client. </span><span aria-hidden="true">hpe · ncg client · </span>employee resource groups · 5 roles · built for ~1,200 employees · pwa</span>
-            <h3 class="w-card-name">The Hub for HPE</h3>
-            
-          </div>
-          <div class="w-card-chips" aria-hidden="true"><span class="w-chip">Multi-role</span><span class="w-chip">PWA</span></div>
-        </div>
-      </a></li>
-      <li class="w-item"><a href="case-studies/viatris.html" class="w-card reveal">
-        <div class="w-card-img">
-          <img src="assets/images/viatris-event-detail.jpg" alt="" loading="lazy" decoding="async" />
-          <div class="w-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <span class="w-card-num" aria-hidden="true">04</span>
-        </div>
-        <div class="w-card-info">
-          <div class="w-card-left">
-            <span class="w-card-tags"><span class="sr-only">Incture client. </span><span aria-hidden="true">incture client · </span>pharma · event sponsorship · employee benefits · client workshops</span>
-            <h3 class="w-card-name">Viatris</h3>
-            
-          </div>
-          <div class="w-card-chips" aria-hidden="true"><span class="w-chip">Enterprise</span><span class="w-chip">Regulated</span></div>
-        </div>
-      </a></li>
-    </ul>
-
-    <div class="works-more reveal">
-      <a href="work.html" class="btn btn-outline btn-lg">View all 11 case studies <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    </div>
-  </section>
-
-  <!-- ══════ ABOUT ══════ -->
-  <section id="about" class="about" aria-labelledby="about-title">
-    <h2 class="sec-eye reveal" id="about-title">About</h2>
-    <div class="about-grid">
-      <div class="reveal">
-        <div class="about-photo">
-          <img decoding="async" src="assets/images/Saurabh_Profile.png" alt="Saurabh Kumar, product designer, Bengaluru" />
-        </div>
-        <p class="about-caption-role">Product Design and Strategy</p>
-        <p class="about-caption-loc">Bengaluru, India · Hybrid, on-site or remote</p>
-      </div>
-      <div class="reveal d1">
-        <p class="about-text">
-          Most products don't break on the happy path. They break in the states nobody drew: the pending, the ambiguous, the moment a system fails without telling anyone. I've spent 10+ years in B2B SaaS designing those states, across BFSI, aviation, legal, enterprise tooling, and HR tech.
-        </p>
-        <p class="about-text">
-          My work moved from designing what users see to designing <strong>how systems think and respond</strong>. States, transitions, feedback loops, decision surfaces. I treat trust and human judgment as load-bearing structure, not values to gesture at.
-        </p>
-        <p class="about-text">
-          I'm looking for a senior role where design is part of deciding what gets built. <strong>Real access to the problem, not just the execution.</strong>
-        </p>
-        <div class="about-pills">
-          <span class="about-pill">Systems Design</span>
-          <span class="about-pill">AI Workflows</span>
-          <span class="about-pill">Enterprise UX</span>
-          <span class="about-pill">B2B SaaS</span>
-          <span class="about-pill">BFSI</span>
-          <span class="about-pill">Aviation</span>
-          <span class="about-pill">HR Tech</span>
-          <span class="about-pill">Legal Tech</span>
-          <span class="about-pill">Figma</span>
-          <span class="about-pill">Decision Surfaces</span>
-          <span class="about-pill">IA</span>
-          <span class="about-pill">Design Systems</span>
-        </div>
-        <div class="about-ctas">
-          <a href="mailto:tosaurav15@gmail.com" class="btn btn-solid">
-            Get in touch
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="https://linkedin.com/in/saurabhkumar-1" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-            LinkedIn<span class="sr-only"> (opens in a new tab)</span>
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════ CLIENTS ══════ -->
-  <section class="clients reveal" aria-labelledby="clients-title">
-    <h2 class="clients-label" id="clients-title">Selected clients</h2>
-    <ul class="clients-row" role="list">
-      <li class="client-name">PwC</li>
-      <li class="client-name">HPE</li>
-      <li class="client-name">IndiGo</li>
-      <li class="client-name">Clix Capital</li>
-      <li class="client-name">Edelweiss Tokio</li>
-      <li class="client-name">DuPont</li>
-      <li class="client-name">Club Mahindra</li>
-    </ul>
-  </section>
-
-  </main>
-
-  <!-- ══════ FOOTER ══════ -->
-  <footer class="l-footer">
-    <div class="footer-cta-wrap" aria-hidden="true"><div class="footer-reel"><div class="footer-slide"><span class="footer-slide-pre">Say</span><span class="footer-slide-main">HELLO!</span></div><div class="footer-slide"><span class="footer-slide-pre">Find the</span><span class="footer-slide-main">MISSING STATE.</span></div><div class="footer-slide"><span class="footer-slide-pre">Design</span><span class="footer-slide-main">SYSTEMS.</span></div><div class="footer-slide"><span class="footer-slide-pre">Not</span><span class="footer-slide-main">SCREENS.</span></div><div class="footer-slide"><span class="footer-slide-pre">Based in</span><span class="footer-slide-main">BENGALURU.</span></div><div class="footer-slide"><span class="footer-slide-pre">Senior</span><span class="footer-slide-main">ROLES.</span></div></div></div>
-    <a href="mailto:tosaurav15@gmail.com" class="footer-email-link">TOSAURAV15@GMAIL.COM</a>
-    <div class="footer-cols">
-      <div><h2 class="footer-col-head">Navigation</h2><div class="footer-col-links"><a href="index.html" class="footer-col-link">Home</a><a href="work.html" class="footer-col-link">All case studies</a><a href="#about" class="footer-col-link">About</a><a href="mailto:tosaurav15@gmail.com" class="footer-col-link">Contact</a></div></div>
-      <div><h2 class="footer-col-head">Case Studies</h2><div class="footer-col-links"><a href="case-studies/career-hiring-intelligence.html" class="footer-col-link">Career &amp; Hiring Intelligence</a><a href="case-studies/rcms.html" class="footer-col-link">RCMS for HPE</a><a href="case-studies/hpe.html" class="footer-col-link">The Hub for HPE</a><a href="case-studies/viatris.html" class="footer-col-link">Viatris</a><a href="case-studies/murphy.html" class="footer-col-link">Murphy Oil</a><a href="case-studies/baker-hughes.html" class="footer-col-link">Baker Hughes</a><a href="case-studies/elc-returns.html" class="footer-col-link">Estée Lauder Companies</a><a href="case-studies/pricing.html" class="footer-col-link">Intelligent Pricing</a><a href="case-studies/cherrywork-itm.html" class="footer-col-link">Cherrywork ITM</a><a href="case-studies/pwc.html" class="footer-col-link">PwC Design System</a><a href="case-studies/indigo.html" class="footer-col-link">IndiGo</a></div></div>
-      <div><h2 class="footer-col-head">Connect</h2><div class="footer-col-links"><a href="https://linkedin.com/in/saurabhkumar-1" target="_blank" rel="noopener noreferrer" class="footer-col-link">LinkedIn<span class="sr-only"> (opens in a new tab)</span> <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="mailto:tosaurav15@gmail.com" class="footer-col-link">tosaurav15@gmail.com</a><span class="footer-col-link footer-col-text">Bengaluru, India</span></div></div>
-    </div>
-    <div class="footer-base"><span class="footer-copy">© 2026 Saurabh Kumar</span><span class="footer-made">Product Design and Strategy · Bengaluru · hybrid, on-site or remote</span></div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/SplitText.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js" defer></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/"}}</script>
+<script src="assets/js/main.js" defer></script>
+<script type="module" src="assets/js/app.js"></script>
 </body>
 </html>
