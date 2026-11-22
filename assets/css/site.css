@@ -465,3 +465,7 @@ html:not(.has-3d) .case-fallback{margin:0;border-radius:var(--radius-m);overflow
 @media (max-width:1100px){ .foot-top{grid-template-columns:1fr 1fr} .foot-brand{grid-column:1 / -1} }
 @media (max-width:560px){ .foot-top{grid-template-columns:1fr} .foot-cases ul{grid-template-columns:1fr} }
 @media (max-width:860px){ .has-3d .chapters .case:last-child{min-height:280vh} }
+/* v7.3 · the chapter card's "Read the case study" is a real link, above the card's stretched title link */
+a.read{position:relative;z-index:3;color:var(--text);text-decoration:none;min-height:44px}
+a.read:hover{text-decoration:underline;text-underline-offset:.25em}
+a.read:focus-visible{outline:2px solid var(--focus,var(--sig-a));outline-offset:4px;border-radius:4px}
