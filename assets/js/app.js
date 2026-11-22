@@ -36,13 +36,13 @@ if (!reduce && Lenis) {
 /* ---------- one 3D world behind the page ---------- */
 const canvas = document.getElementById("world");
 const CASES = [
-  { kind: "board", screens: ["d-viatris-home-calendar.jpg", "d-viatris-event-detail.jpg", "d-viatris-add-booth.jpg", "d-viatris-approver-remarks.jpg", "d-viatris-report-date.jpg", "d-viatris-admin-users.jpg"] },
-  { kind: "stack", layers: ["timesheet", "approvals", "billing", "projects", "health", "admin", "profile", "geo"].map((k) => [`r-${k}-l.jpg`, `r-${k}-d.jpg`]) },
-  { kind: "roles", web: ["h-web-clubs.jpg", "h-web-onboard.jpg", "h-web-milestone.jpg", "h-web-clubs-dark.jpg"],
-    phones: ["h-member.jpg", "h-owner.jpg", "h-event.jpg", "h-moderator.jpg", "h-admin.jpg"], roles: ["Member", "Club Owner", "Event Manager", "Moderator", "Admin"] },
   { kind: "explain", screens: ["d-chi-dashboard.jpg", "d-chi-journey.jpg"],
     notes: [["The rule", "No score without its reason."], ["The decision", "AI explains. A person decides."], ["The wait", "Waiting is a designed state."]],
     anchors: [[1.95, 2.3, 0.9], [2.1, 1.48, 1.45], [1.9, 0.68, 2.0]], spots: [[0.9, 2.05], [-0.4, 1.25], [0.5, 0.55]] },
+  { kind: "stack", layers: ["timesheet", "approvals", "billing", "projects", "health", "admin", "profile", "geo"].map((k) => [`r-${k}-l.jpg`, `r-${k}-d.jpg`]) },
+  { kind: "roles", web: ["h-web-clubs.jpg", "h-web-onboard.jpg", "h-web-milestone.jpg", "h-web-clubs-dark.jpg"],
+    phones: ["h-member.jpg", "h-owner.jpg", "h-event.jpg", "h-moderator.jpg", "h-admin.jpg"], roles: ["Member", "Club Owner", "Event Manager", "Moderator", "Admin"] },
+  { kind: "board", screens: ["d-viatris-home-calendar.jpg", "d-viatris-event-detail.jpg", "d-viatris-add-booth.jpg", "d-viatris-approver-remarks.jpg", "d-viatris-report-date.jpg", "d-viatris-admin-users.jpg"] },
 ];
 const caseEls = [...document.querySelectorAll(".chapters .case")];
 const sel = document.querySelector(".piece-sel"), selState = sel?.querySelector("[data-v=state]"), selDim = sel?.querySelector("[data-v=dim]");

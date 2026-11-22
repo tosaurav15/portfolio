@@ -88,10 +88,13 @@
     }
 
     /* chapters: each block arrives as it enters */
-    document.querySelectorAll(".ch-eye, .ch-title, .ch-body > *, .ix-grid > li, .cs-next, .nf > *:not(.code)").forEach((el) => {
+    document.querySelectorAll(".ch-eye, .ch-title, .ch-body > *, .cs-next, .nf > *:not(.code)").forEach((el) => {
       el.classList.add("rv");
-      gsap.to(el, { autoAlpha: 1, y: 0, duration: 1, ease: "expo.out", scrollTrigger: { trigger: el, start: "top 88%", once: true } });
+      gsap.to(el, { autoAlpha: 1, y: 0, duration: 1, ease: "expo.out", scrollTrigger: { trigger: el, start: "top 92%", once: true } });
     });
+    /* the case-study index: every card is there from the start, arriving in a short stagger */
+    const ix = [...document.querySelectorAll(".ix-grid > li")];
+    if (ix.length) gsap.from(ix, { autoAlpha: 0, y: 24, duration: 0.8, ease: "expo.out", stagger: 0.05, delay: 0.1, clearProps: "opacity,visibility,transform" });
     /* screens: the frame unmasks from the label down, like a frame being placed */
     document.querySelectorAll(".scr-frame, .ann-phone").forEach((f) => {
       gsap.fromTo(f, { clipPath: "inset(0% 0% 100% 0% round 14px)" }, { clipPath: "inset(0% 0% 0% 0% round 14px)", duration: 1.3, ease: "expo.inOut", scrollTrigger: { trigger: f, start: "top 85%", once: true } });
