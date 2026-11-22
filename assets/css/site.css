@@ -62,7 +62,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .inspector .st i{width:7px;height:7px;border-radius:50%;background:var(--signal-grad)}
 .inspector[data-state="designed"] .st i{background:var(--st-recovered)}
 .hero-meta{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s6);margin-bottom:clamp(2.5rem,6vh,4.5rem)}
-.hero-meta .spec::before{content:"— ";color:var(--line-strong)}
+.hero-meta .spec::before{content:"";display:inline-block;width:.9em;height:1px;background:var(--line-strong);vertical-align:middle;margin-right:.45em}
 .display{font:600 var(--fs-display)/1 var(--font-display);letter-spacing:var(--track-display);margin:0;max-width:14ch;text-wrap:balance}
 .display .soft{color:var(--muted)}
 
