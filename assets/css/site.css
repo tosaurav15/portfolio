@@ -406,3 +406,62 @@ html:not(.has-3d) .case-fallback{margin:0;border-radius:var(--radius-m);overflow
 @media (max-width:860px){ .has-3d .chapters .case:last-child{min-height:170vh} }
 /* touch screens have no keyboard shortcut to show */
 @media (pointer:coarse){ .grid-btn kbd{display:none} }
+
+/* ==========================================================================
+   v7.2 · About with portrait, how I work and experience; full footer;
+   a clear "view all" after the four chapters
+   ========================================================================== */
+.work-more{display:flex;justify-content:center;padding:clamp(3rem,8vh,5rem) 0 var(--s4)}
+.has-3d .work-more{position:relative;z-index:3}
+
+.about{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--s6);row-gap:clamp(3rem,7vh,5rem);align-items:start}
+.about-photo{grid-column:1 / span 4;margin:0}
+.about-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 6%;border-radius:var(--radius-l);border:1px solid var(--line);background:var(--surface-2)}
+.about-photo figcaption{display:grid;gap:.2rem;margin-top:var(--s4);font-size:var(--fs-small);color:var(--muted)}
+.about-photo figcaption strong{color:var(--text);font:600 1.125rem/1.3 var(--font-display);letter-spacing:-.01em}
+.about-main{grid-column:6 / span 7}
+.about .quote{grid-column:auto;margin:0 0 var(--s6)}
+.about .lead{font:500 clamp(1.25rem,1.05rem + .6vw,1.5rem)/1.45 var(--font-display);letter-spacing:-.01em;color:var(--text);margin:0 0 var(--s5);max-width:38em}
+.about .body{grid-column:auto;color:var(--muted);max-width:38em}
+.about .body p{margin:0 0 var(--s4);line-height:1.65}
+.about-ctas{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s5)}
+.about-how,.about-exp{grid-column:1 / -1;padding-top:var(--s6);border-top:1px solid var(--line)}
+.about-how h3,.about-exp h3{margin:0 0 var(--s5);color:var(--muted);font-weight:500}
+.about-how ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s6);margin:0;padding:0;list-style:none}
+.about-how li{color:var(--muted);line-height:1.6}
+.about-how li strong{display:block;color:var(--text);font:600 1.25rem/1.25 var(--font-display);letter-spacing:-.015em;margin-bottom:.5rem}
+.about-exp ol{margin:0;padding:0;list-style:none}
+.about-exp li{display:grid;grid-template-columns:9rem minmax(0,1.1fr) minmax(0,2fr);gap:var(--s5);padding:var(--s4) 0;border-bottom:1px solid var(--line)}
+.about-exp li:last-child{border-bottom:0}
+.about-exp .yr{font:500 var(--fs-spec)/1.6 var(--font-mono,var(--font-text));color:var(--muted);letter-spacing:.02em}
+.about-exp .role{display:grid;gap:.15rem;color:var(--muted)}
+.about-exp .role strong{color:var(--text);font-weight:600}
+.about-exp .what{color:var(--muted);line-height:1.55}
+@media (max-width:860px){
+  .about-photo{grid-column:1 / -1;position:static;max-width:22rem}
+  .about-main{grid-column:1 / -1}
+  .about-how ul{grid-template-columns:1fr;gap:var(--s5)}
+  .about-exp li{grid-template-columns:1fr;gap:.35rem}
+}
+
+.site-foot{border-top:1px solid var(--line);padding-block:clamp(3.5rem,9vh,6rem) var(--s6);background:var(--bg);position:relative;z-index:3}
+.site-foot>.wrap{display:block}
+.foot-top{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,.8fr) minmax(0,1.4fr) minmax(0,.9fr);gap:var(--s6) clamp(1.5rem,4vw,4rem);align-items:start}
+.foot-name{font:600 clamp(1.5rem,1.2rem + 1vw,2rem)/1.1 var(--font-display);letter-spacing:-.02em;margin:0 0 var(--s3)}
+.foot-line{color:var(--muted);margin:0 0 var(--s5);max-width:26ch;line-height:1.5}
+.foot-mail{font:500 1.125rem/1.3 var(--font-display);text-decoration:none;background:var(--signal-grad) 0 100%/100% 2px no-repeat;padding-bottom:.2rem}
+.foot-mail:hover{background-size:0 2px;background-position:100% 100%}
+.foot-avail{display:flex;align-items:center;gap:.5rem;margin:var(--s5) 0 0;color:var(--muted);font-size:var(--fs-small)}
+.foot-avail i{width:8px;height:8px;border-radius:50%;background:var(--signal-grad);box-shadow:0 0 8px var(--sig-a)}
+.foot-h{font:500 var(--fs-spec)/1 var(--font-text);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 var(--s4)}
+.foot-col ul{margin:0;padding:0;list-style:none;display:grid;gap:.15rem}
+.foot-cases ul{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--s5)}
+.foot-col a{display:inline-flex;align-items:center;min-height:36px;color:var(--text);text-decoration:none;font-size:var(--fs-small)}
+.foot-col a:hover{text-decoration:underline;text-underline-offset:.25em}
+.foot-base{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--s4);margin-top:clamp(3rem,7vh,4.5rem);padding-top:var(--s5);border-top:1px solid var(--line)}
+.foot-ctl{display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap}
+.foot-top-link{display:inline-flex;align-items:center;min-height:44px;padding:0 .9rem;color:var(--muted);text-decoration:none;font-size:var(--fs-small)}
+.foot-top-link:hover{color:var(--text)}
+@media (max-width:1100px){ .foot-top{grid-template-columns:1fr 1fr} .foot-brand{grid-column:1 / -1} }
+@media (max-width:560px){ .foot-top{grid-template-columns:1fr} .foot-cases ul{grid-template-columns:1fr} }
+@media (max-width:860px){ .has-3d .chapters .case:last-child{min-height:280vh} }
